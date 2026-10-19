@@ -17,24 +17,23 @@ app.log
 build/
 dist/
 dist-apple/
-*.spec
 *.egg-info/
 
-# Compiled Binaries & Installers (>100MB / non-source assets)
+# Compiled Standalone Binaries (Whitelisting public/downloads/*.zip for complete Firebase hosting portability)
 *.exe
 *.apk
 *.ipa
 *.dmg
 *.zip
+!public/downloads/*.zip
 !apple-companion/**
 Launch Desktop Companion.lnk
 
 # User Configuration & Local State
 config.json
 
-# Firebase CLI Cache & Hosting Downloads
+# Firebase CLI Cache
 .firebase/
-public/downloads/
 
 # Xcode & Apple Build Artifacts
 apple-companion/build/
@@ -44,7 +43,7 @@ apple-companion/*.xcuserdatad
 apple-companion/**/xcuserdata/
 apple-companion/**/DerivedData/
 
-# Android / Flutter Build Artifacts (if applicable)
+# Android / Gradle Build Artifacts
 phone-companion/build/
 phone-companion/.dart_tool/
 phone-companion/.gradle/

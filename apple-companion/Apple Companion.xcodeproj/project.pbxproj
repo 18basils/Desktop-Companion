@@ -26,18 +26,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2001 /* CompanionConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionConfig.swift; sourceTree = "<group>"; };
-		2002 /* PetSkin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSkin.swift; sourceTree = "<group>"; };
-		2003 /* BreakType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakType.swift; sourceTree = "<group>"; };
-		2004 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		2005 /* HapticAndSoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticAndSoundService.swift; sourceTree = "<group>"; };
-		2006 /* CompanionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanionViewModel.swift; sourceTree = "<group>"; };
-		2007 /* PixelAvatarStageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelAvatarStageView.swift; sourceTree = "<group>"; };
-		2008 /* HydrationGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydrationGaugeView.swift; sourceTree = "<group>"; };
-		2009 /* RemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersView.swift; sourceTree = "<group>"; };
-		2010 /* ScheduleSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSettingsView.swift; sourceTree = "<group>"; };
-		2011 /* AvatarStudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarStudioView.swift; sourceTree = "<group>"; };
-		2012 /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
+		2001 /* CompanionConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/CompanionConfig.swift; sourceTree = "<group>"; };
+		2002 /* PetSkin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/PetSkin.swift; sourceTree = "<group>"; };
+		2003 /* BreakType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/BreakType.swift; sourceTree = "<group>"; };
+		2004 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/NotificationService.swift; sourceTree = "<group>"; };
+		2005 /* HapticAndSoundService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/HapticAndSoundService.swift; sourceTree = "<group>"; };
+		2006 /* CompanionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModels/CompanionViewModel.swift; sourceTree = "<group>"; };
+		2007 /* PixelAvatarStageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/PixelAvatarStageView.swift; sourceTree = "<group>"; };
+		2008 /* HydrationGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/HydrationGaugeView.swift; sourceTree = "<group>"; };
+		2009 /* RemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/RemindersView.swift; sourceTree = "<group>"; };
+		2010 /* ScheduleSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/ScheduleSettingsView.swift; sourceTree = "<group>"; };
+		2011 /* AvatarStudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/AvatarStudioView.swift; sourceTree = "<group>"; };
+		2012 /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views/MainContentView.swift; sourceTree = "<group>"; };
 		2013 /* iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSApp.swift; sourceTree = "<group>"; };
 		2014 /* macOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOSApp.swift; sourceTree = "<group>"; };
 		2015 /* MacOSPetOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacOSPetOverlayView.swift; sourceTree = "<group>"; };
