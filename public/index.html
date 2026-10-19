@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DDFQ122CDZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DDFQ122CDZ');
+  </script>
+
+  <title>Companion Hub - Interactive Desktop & Mobile Pet</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Companion Hub - Interactive Desktop & Mobile Pet">
+  <meta name="description" content="Download your personalized desktop & mobile companion pet for Windows, Android, Mac, and iOS. Features hydration tracking, posture breaks, 6 animated pixel pets, and custom avatars.">
+  <meta name="keywords" content="desktop companion, desktop pet, hydration reminder, posture coach, screen buddy, pixel pet, windows, android apk, macos, ios">
+  <meta name="author" content="BS_CZR_i11">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://mycompanionhub.web.app/">
+
+  <!-- Web Manifest & Icons -->
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#080c15">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Companion Hub">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/tray_icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+
+  <!-- Open Graph / Facebook / WhatsApp / LinkedIn / Slack -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mycompanionhub.web.app/">
+  <meta property="og:site_name" content="Companion Hub">
+  <meta property="og:title" content="Companion Hub - Interactive Desktop & Mobile Pet 💧">
+  <meta property="og:description" content="Stay hydrated, focused, and refreshed with your interactive desk buddy. Available for Windows, Android, Mac, and iOS.">
+  <meta property="og:image" content="https://mycompanionhub.web.app/assets/og-image.png">
+  <meta property="og:image:secure_url" content="https://mycompanionhub.web.app/assets/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Companion Hub - Universal Desktop and Mobile Pet Preview">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://mycompanionhub.web.app/">
+  <meta name="twitter:title" content="Companion Hub - Interactive Desktop & Mobile Pet 💧">
+  <meta name="twitter:description" content="Stay hydrated, focused, and refreshed with your interactive desk buddy. Available for Windows, Android, Mac, and iOS.">
+  <meta name="twitter:image" content="https://mycompanionhub.web.app/assets/og-image.png">
+  <meta name="twitter:image:alt" content="Companion Hub - Universal Desktop and Mobile Pet Preview">
+  <style>
+    :root {
+      --bg-dark: #080c15;
+      --bg-card: rgba(17, 24, 39, 0.75);
+      --border-card: rgba(56, 189, 248, 0.2);
+      --cyan-neon: #38bdf8;
+      --cyan-bright: #22d3ee;
+      --blue-primary: #0284c7;
+      --mint-neon: #34d399;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top center, #0f172a 0%, #080c15 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    /* Navbar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(8, 12, 21, 0.8);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      font-size: 1.8rem;
+      background: rgba(2, 132, 199, 0.2);
+      padding: 4px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+    }
+
+    .version-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--cyan-bright);
+      background: rgba(34, 211, 238, 0.15);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 40px 0 30px;
+    }
+
+    .detected-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 20px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid var(--border-card);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--cyan-neon);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--cyan-neon) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 36px;
+    }
+
+    /* Primary Dynamic Download Button */
+    .hero-btn-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .btn-download-hero {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(135deg, var(--blue-primary), var(--cyan-neon));
+      color: #080c15;
+      font-size: 1.15rem;
+      font-weight: 800;
+      padding: 16px 40px;
+      border-radius: 14px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-download-hero:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(56, 189, 248, 0.5);
+    }
+
+    .file-meta-note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Platform Grid Cards */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-bottom: 50px;
+    }
+
+    .platform-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 24px 20px;
+      text-align: center;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .platform-card:hover {
+      border-color: var(--border-card);
+      transform: translateY(-3px);
+    }
+
+    .platform-card.highlighted {
+      border-color: var(--cyan-neon);
+      background: rgba(15, 23, 42, 0.9);
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+    }
+
+    .platform-card.highlighted::before {
+      content: "YOUR DEVICE";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--cyan-neon);
+      color: #080c15;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    .platform-icon {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .platform-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .platform-detail {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .btn-download-small {
+      display: block;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .btn-download-small:hover {
+      background: var(--cyan-neon);
+      color: #080c15;
+      border-color: var(--cyan-neon);
+    }
+
+    /* QR Code Hub */
+    .qr-hub {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .qr-nav {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 24px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 4px;
+      border-radius: 12px;
+    }
+
+    .qr-tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .qr-tab-btn.active {
+      background: var(--cyan-neon);
+      color: #080c15;
+    }
+
+    .qr-display-box {
+      background: #ffffff;
+      padding: 16px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      margin-bottom: 16px;
+      width: 180px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qr-display-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .qr-hint {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Pet Showcase */
+    .pets-showcase {
+      margin-bottom: 60px;
+    }
+
+    .pet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+    }
+
+    .pet-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+    }
+
+    .pet-card:hover {
+      border-color: var(--cyan-neon);
+      transform: translateY(-2px);
+    }
+
+    .pet-emoji {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+
+    .pet-card:active .pet-emoji {
+      transform: scale(1.3);
+    }
+
+    .pet-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 2px;
+    }
+
+    .pet-role {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Guide & Instructions */
+    .guide-section {
+      background: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 34px;
+      margin-bottom: 40px;
+    }
+
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .guide-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .guide-item h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--cyan-neon);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .guide-item p {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      line-height: 1.4;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Floating Hearts */
+    .heart-particle {
+      position: fixed;
+      pointer-events: none;
+      font-size: 24px;
+      animation: floatUp 1s ease-out forwards;
+      z-index: 1000;
+    }
+
+    @keyframes floatUp {
+      0% { opacity: 1; transform: translateY(0) scale(1); }
+      100% { opacity: 0; transform: translateY(-80px) scale(1.4); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header>
+    <a href="#" class="brand">
+      <span class="brand-icon">💧</span>
+      <span>Companion Hub</span>
+    </a>
+    <div class="version-tag">v2.0 Universal</div>
+  </header>
+
+  <div class="container">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div id="deviceBadge" class="detected-badge">
+        <span>🔍 Detecting your device...</span>
+      </div>
+
+      <h1>Your Interactive Desk & Mobile Pet</h1>
+      <p>A fun desktop buddy and hydration coach that lives quietly in your system tray or menu bar, tracks water goals, and keeps you refreshed.</p>
+
+      <!-- Primary Auto-Detected Download Button -->
+      <div class="hero-btn-container">
+        <a id="primaryDownloadBtn" href="downloads/Desktop-Companion-Windows.zip" class="btn-download-hero" download>
+          <span>📥 Download for Windows (.zip)</span>
+        </a>
+        <div id="fileMetaNote" class="file-meta-note">Version 2.0 • Standalone Setup inside .zip • ~71 MB</div>
+      </div>
+    </section>
+
+    <!-- Platform Download Cards -->
+    <h2 class="section-title">Available for All Platforms</h2>
+    <div class="platform-grid">
+
+      <!-- Windows -->
+      <div id="card-windows" class="platform-card">
+        <div class="platform-icon">💻</div>
+        <div class="platform-name">Windows 10 / 11</div>
+        <div class="platform-detail">Setup Wizard inside .zip • x64 • ~71 MB</div>
+        <a href="downloads/Desktop-Companion-Windows.zip" class="btn-download-small" download>Download .zip</a>
+      </div>
+
+      <!-- Android -->
+      <div id="card-android" class="platform-card">
+        <div class="platform-icon">📱</div>
+        <div class="platform-name">Android Phone</div>
+        <div class="platform-detail">APK package inside .zip • ~7.6 MB</div>
+        <a href="downloads/Phone-Companion-Android.zip" class="btn-download-small" download>Download .zip</a>
+      </div>
+
+      <!-- macOS -->
+      <div id="card-macos" class="platform-card">
+        <div class="platform-icon">🍏</div>
+        <div class="platform-name">macOS (MacBook / iMac)</div>
+        <div class="platform-detail">Menu Bar App & Pet Overlay • Multiplatform</div>
+        <a href="downloads/Apple-Companion.zip" class="btn-download-small" download>Download for Mac</a>
+      </div>
+
+      <!-- iOS -->
+      <div id="card-ios" class="platform-card">
+        <div class="platform-icon">📱</div>
+        <div class="platform-name">iPhone & iPad (iOS)</div>
+        <div class="platform-detail">Native SwiftUI Package (.zip)</div>
+        <a href="downloads/Apple-Companion.zip" class="btn-download-small" download>Download for iOS</a>
+      </div>
+
+    </div>
+
+    <!-- On-Screen Dual QR Code Hub for Mobile -->
+    <div class="qr-hub">
+      <h2 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 8px;">Scan to Install on Mobile</h2>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Point your phone camera at your screen to download instantly on mobile</p>
+
+      <div class="qr-nav">
+        <button id="tabAndroid" class="qr-tab-btn active" onclick="switchQR('android')">Android (.apk)</button>
+        <button id="tabApple" class="qr-tab-btn" onclick="switchQR('apple')">iPhone & iPad (Apple)</button>
+      </div>
+
+      <div class="qr-display-box">
+        <img id="qrImage" src="" alt="Mobile Download QR Code">
+      </div>
+
+      <div id="qrCaption" class="qr-hint">Scan with your Android camera to download Phone Companion.apk</div>
+    </div>
+
+    <!-- Companion Roster Showcase -->
+    <section class="pets-showcase">
+      <h2 class="section-title">Meet Your 6 Pixel Companions</h2>
+      <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">Tap on any companion to pet them and spawn love!</p>
+
+      <div class="pet-grid">
+        <div class="pet-card" onclick="petCharacter(event, '🧢 Pixel Guy: Stay focused and drink high quality H2O!')">
+          <div class="pet-emoji">🧢</div>
+          <div class="pet-name">Pixel Guy</div>
+          <div class="pet-role">Focus Desk Buddy</div>
+        </div>
+
+        <div class="pet-card" onclick="petCharacter(event, '🐱 Kitty: Purr... don\'t forget your water glass!')">
+          <div class="pet-emoji">🐱</div>
+          <div class="pet-name">Cute Kitty</div>
+          <div class="pet-role">Gentle Nap & Sip Pet</div>
+        </div>
+
+        <div class="pet-card" onclick="petCharacter(event, '🤖 Robo Buddy: System check 100%... Hydration required!')">
+          <div class="pet-emoji">🤖</div>
+          <div class="pet-name">Robo Buddy</div>
+          <div class="pet-role">Cyber Wellness AI</div>
+        </div>
+
+        <div class="pet-card" onclick="petCharacter(event, '💧 Slime: Splish splash! Feed the machine!')">
+          <div class="pet-emoji">💧</div>
+          <div class="pet-name">Water Slime</div>
+          <div class="pet-role">Pure Hydration Mascot</div>
+        </div>
+
+        <div class="pet-card" onclick="petCharacter(event, '🐸 Frog: Ribbit! 20-20-20 eye rest & neck roll!')">
+          <div class="pet-emoji">🐸</div>
+          <div class="pet-name">Forest Frog</div>
+          <div class="pet-role">Zen Stretch Master</div>
+        </div>
+
+        <div class="pet-card" onclick="petCharacter(event, '👻 Ghost: Booo! Don\'t slouch at your screen!')">
+          <div class="pet-emoji">👻</div>
+          <div class="pet-name">Spooky Ghost</div>
+          <div class="pet-role">Posture Reminder</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Post-Installation & Customization Guide -->
+    <section class="guide-section">
+      <h2 style="font-size: 1.4rem; font-weight: 800; color: #ffffff; text-align: center;">🚀 Quick Start & Customization Guide</h2>
+      <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-top: 6px;">Tips to get the most out of your companion after installing</p>
+
+      <div class="guide-grid">
+
+        <div class="guide-item">
+          <h3><span>🎨</span> Custom Avatars</h3>
+          <p>Want your own pet? Right-click the system tray icon > <b>Settings...</b> > <b>Avatars</b> > tap <b>"Import Custom Avatar"</b> or drop any animated <b>.gif</b> or <b>.png</b> into the <code>custom_avatars</code> folder. Your pet will automatically load and walk with it!</p>
+        </div>
+
+        <div class="guide-item">
+          <h3><span>👑</span> Accessory Evolution</h3>
+          <p>Stay hydrated to unlock secret items! Reaching <b>4 cups</b> unlocks <b>pixel sunglasses 🕶️</b> on your character. Hitting your daily goal unlocks a <b>golden celebration crown 👑</b> with confetti!</p>
+        </div>
+
+        <div class="guide-item">
+          <h3><span>⏸️</span> Meeting Mode / Pause</h3>
+          <p>In a Zoom call or presentation? Right-click 💧 in your tray (or Mac menu bar) > <b>Meeting Mode / Pause</b> to silence all popups for <b>30 minutes, 1 hour, or 2 hours</b>. Reminders resume automatically.</p>
+        </div>
+
+        <div class="guide-item">
+          <h3><span>🌙</span> Working Hours & Quiet Hours</h3>
+          <p>By default, companion runs during office hours (<b>Mon–Fri, 9:00 AM – 6:30 PM</b>) and activates Quiet Hours at night (<b>10:00 PM – 8:00 AM</b>) to ensure you are never disturbed when resting.</p>
+        </div>
+
+        <div class="guide-item">
+          <h3><span>❤️</span> Interactive Petting</h3>
+          <p>Click or tap on the walking character anytime to pat it! Floating hearts will burst upward and your companion's mood status will light up with appreciation.</p>
+        </div>
+
+        <div class="guide-item">
+          <h3><span>🗑️</span> Clean Uninstallation</h3>
+          <p>Desktop Companion is fully registered in <b>Windows Settings > Apps > Installed apps</b>. You can uninstall it cleanly anytime directly from Windows Settings or your Start Menu with one click.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    Companion Hub v2.0 • Created for Colleagues • Local-first & Private
+  </footer>
+
+  <script>
+    // 1. Smart Device Detection
+    function detectDevice() {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      const badge = document.getElementById("deviceBadge");
+      const btn = document.getElementById("primaryDownloadBtn");
+      const note = document.getElementById("fileMetaNote");
+
+      // Reset all card highlights
+      document.querySelectorAll(".platform-card").forEach(c => c.classList.remove("highlighted"));
+
+      if (/android/i.test(ua)) {
+        badge.innerHTML = "<span>📱 Detected: Android Device</span>";
+        btn.href = "downloads/Phone-Companion-Android.zip";
+        btn.innerHTML = "<span>📥 Download for Android (.zip)</span>";
+        note.innerText = "Phone Companion v2.0 • APK package inside .zip • ~7.6 MB";
+        document.getElementById("card-android").classList.add("highlighted");
+      } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+        badge.innerHTML = "<span>🍏 Detected: Apple iOS (iPhone/iPad)</span>";
+        btn.href = "downloads/Apple-Companion.zip";
+        btn.innerHTML = "<span>📥 Download for iOS (iPhone/iPad)</span>";
+        note.innerText = "Apple Companion v2.0 • Native SwiftUI Package";
+        document.getElementById("card-ios").classList.add("highlighted");
+      } else if (/Macintosh|Mac OS X/i.test(ua)) {
+        badge.innerHTML = "<span>🍏 Detected: Apple Mac (macOS)</span>";
+        btn.href = "downloads/Apple-Companion.zip";
+        btn.innerHTML = "<span>📥 Download for macOS</span>";
+        note.innerText = "Apple Companion v2.0 • Menu Bar App & Pet Overlay";
+        document.getElementById("card-macos").classList.add("highlighted");
+      } else {
+        // Default to Windows
+        badge.innerHTML = "<span>💻 Detected: Windows PC</span>";
+        btn.href = "downloads/Desktop-Companion-Windows.zip";
+        btn.innerHTML = "<span>📥 Download for Windows (.zip)</span>";
+        note.innerText = "Desktop Companion v2.0 • Standalone Setup inside .zip • ~71 MB";
+        document.getElementById("card-windows").classList.add("highlighted");
+      }
+    }
+
+    // 2. Dual QR Code Switcher
+    function switchQR(type) {
+      const img = document.getElementById("qrImage");
+      const caption = document.getElementById("qrCaption");
+      const tabA = document.getElementById("tabAndroid");
+      const tabB = document.getElementById("tabApple");
+
+      const currentOrigin = window.location.origin || "";
+      const currentPath = window.location.pathname.replace(/\/$/, "");
+
+      if (type === 'android') {
+        tabA.classList.add("active");
+        tabB.classList.remove("active");
+        const apkUrl = `${currentOrigin}${currentPath}/downloads/Phone-Companion-Android.zip`;
+        img.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(apkUrl)}`;
+        caption.innerText = "Scan with your Android camera to download Phone-Companion-Android.zip directly!";
+      } else {
+        tabB.classList.add("active");
+        tabA.classList.remove("active");
+        const appleUrl = `${currentOrigin}${currentPath}/downloads/Apple-Companion.zip`;
+        img.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(appleUrl)}`;
+        caption.innerText = "Scan with your iPhone / iPad camera to download the Apple Companion package!";
+      }
+    }
+
+    // 3. Interactive Petting Hearts Animation
+    function petCharacter(event, quote) {
+      const heart = document.createElement("div");
+      heart.className = "heart-particle";
+      heart.innerText = "❤️";
+      heart.style.left = `${event.clientX - 12}px`;
+      heart.style.top = `${event.clientY - 20}px`;
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 1000);
+    }
+
+    // Initialize on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      detectDevice();
+      switchQR('android');
+    });
+  </script>
+</body>
+</html>

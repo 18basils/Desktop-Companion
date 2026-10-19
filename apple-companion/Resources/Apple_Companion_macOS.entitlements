@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- App Sandbox for macOS Gatekeeper & App Store Security Compliance -->
+    <key>com.apple.security.app-sandbox</key>
+    <true/>
+    
+    <!-- Scoped file access: only files the user explicitly chooses in NSOpenPanel -->
+    <key>com.apple.security.files.user-selected.read-only</key>
+    <true/>
+    
+    <!-- Audio output permission for gentle water droplet chimes -->
+    <key>com.apple.security.audio-output</key>
+    <true/>
+
+    <!-- Local-first security: Outgoing client network disabled (No tracking, no telemetry) -->
+    <key>com.apple.security.network.client</key>
+    <false/>
+</dict>
+</plist>

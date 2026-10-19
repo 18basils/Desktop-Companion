@@ -1,0 +1,68 @@
+name: Build Apple Companion (macOS & iOS)
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-apple:
+    name: Build macOS & iOS Binaries
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Select Xcode Toolchain
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Show Xcode Version
+        run: xcodebuild -version
+
+      - name: Build macOS App
+        run: |
+          cd apple-companion
+          xcodebuild clean build \
+            -project "Apple Companion.xcodeproj" \
+            -scheme "Apple Companion" \
+            -destination "platform=macOS" \
+            -configuration Release \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+          
+          # Create DMG / Zip for macOS distribution
+          mkdir -p ../dist-apple
+          if [ -d "build/Release/Apple Companion.app" ]; then
+            cd build/Release
+            hdiutil create -volname "Apple Companion" -srcfolder "Apple Companion.app" -ov -format UDZO "../../../dist-apple/Apple-Companion-macOS.dmg"
+            zip -r "../../../dist-apple/Apple-Companion-macOS.zip" "Apple Companion.app"
+            cd ../..
+          fi
+
+      - name: Build iOS App (.ipa / Payload)
+        run: |
+          cd apple-companion
+          xcodebuild clean archive \
+            -project "Apple Companion.xcodeproj" \
+            -scheme "Apple Companion" \
+            -destination "generic/platform=iOS" \
+            -archivePath "build/AppleCompanion-iOS.xcarchive" \
+            -configuration Release \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
+
+          # Create installable IPA payload
+          mkdir -p build/Payload
+          cp -r build/AppleCompanion-iOS.xcarchive/Products/Applications/*.app build/Payload/
+          cd build
+          zip -r "../../dist-apple/Apple-Companion-iOS.ipa" Payload
+          cd ../..
+
+      - name: Upload Apple Artifacts (DMG & IPA)
+        uses: actions/upload-artifact@v4
+        with:
+          name: Apple-Companion-v2
+          path: dist-apple/*

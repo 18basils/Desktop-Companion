@@ -1,0 +1,61 @@
+# ==============================================================================
+# .gitignore for Desktop & Mobile Companion Hub
+# ==============================================================================
+
+# Python Environments & Caches
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+app.log
+
+# Build Outputs & Packaging
+build/
+dist/
+dist-apple/
+*.spec
+*.egg-info/
+
+# Compiled Binaries & Installers (>100MB / non-source assets)
+*.exe
+*.apk
+*.ipa
+*.dmg
+*.zip
+!apple-companion/**
+Launch Desktop Companion.lnk
+
+# User Configuration & Local State
+config.json
+
+# Firebase CLI Cache & Hosting Downloads
+.firebase/
+public/downloads/
+
+# Xcode & Apple Build Artifacts
+apple-companion/build/
+apple-companion/*.xcarchive
+apple-companion/.build/
+apple-companion/*.xcuserdatad
+apple-companion/**/xcuserdata/
+apple-companion/**/DerivedData/
+
+# Android / Flutter Build Artifacts (if applicable)
+phone-companion/build/
+phone-companion/.dart_tool/
+phone-companion/.gradle/
+phone-companion/local.properties
+phone-companion/**/.cxx/
+
+# Operating System & IDE Artifacts
+.DS_Store
+Thumbs.db
+ehthumbs.db
+.vscode/
+.idea/
+*.swp
+*~

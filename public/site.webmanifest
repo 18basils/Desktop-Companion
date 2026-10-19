@@ -1,0 +1,32 @@
+{
+  "name": "Companion Hub - Desktop & Mobile Pet",
+  "short_name": "Companion Hub",
+  "description": "Your Interactive Desktop & Mobile Pet • Hydration & Posture Coach for Windows, Android, Mac, and iOS",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#080c15",
+  "theme_color": "#080c15",
+  "categories": ["lifestyle", "health", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/tray_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
