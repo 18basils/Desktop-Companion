@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "user_name": "Friend",
+    "interval_minutes": 30,
+    "snooze_minutes": 15,
+    "walk_speed": 4,
+    "screen_side": "left",
+    "dynamic_avatar": true,
+    "skin": "pixel_cat",
+    "daily_goal_cups": 8,
+    "cups_today": 0,
+    "last_date": "",
+    "break_types": [
+        "water",
+        "eye_rest",
+        "stretch"
+    ],
+    "witty_dialogue": true,
+    "schedule": {
+        "enabled": true,
+        "days": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+        ],
+        "start_time": "09:00",
+        "end_time": "18:30"
+    },
+    "quiet_hours": {
+        "enabled": true,
+        "start_time": "20:00",
+        "end_time": "08:00"
+    },
+    "sound_enabled": true
+}

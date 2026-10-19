@@ -1,110 +1,136 @@
-# Desktop Companion v2.0 (PixelFriend Style) 💧
+# Companion Hub (Desktop & Mobile Pet) 💧
 
-A lightweight, secure, and friendly desktop companion for Windows 10 & 11 (x64) that reminds you to stay hydrated, take eye breaks, and stretch during your work day.
+A lightweight, secure, and interactive cross-platform wellness companion for Windows, Android, macOS, and iOS that keeps you hydrated, reminds you of posture and eye breaks, and brings life to your workspace.
 
 ![Version](https://img.shields.io/badge/version-2.0.0-blue)
-![Platform](https://img.shields.io/badge/platform-Windows%2010%20%7C%2011%20x64-brightgreen)
-![Resource Usage](https://img.shields.io/badge/Idle%20CPU-0.0%25-success)
-![Dependencies](https://img.shields.io/badge/external%20dependencies-zero-brightgreen)
-![Security](https://img.shields.io/badge/security-hardened-success)
+![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20Android%20%7C%20macOS%20%7C%20iOS-brightgreen)
+![Portal](https://img.shields.io/badge/portal-https%3A%2F%2Fmycompanionhub.web.app-cyan)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
-## 🎁 What's New in Version 2.0
+## 🌐 Official Web Portal & Downloads
 
-### 🌟 Group A: System & Installer Upgrades
-* **Official Windows Uninstaller**: Appears in **Windows Settings > Installed apps** (and Control Panel) with publisher info and icon. Includes an uninstallation wizard with an option to preserve your custom avatars and preferences.
-* **Visual Settings Panel**: Accessible via tray menu (`⚙️ Settings...`) to easily configure your display name, interval, daily water goal, active schedule, audio chimes, and browse/import custom GIFs.
-* **Colleague Setup Wizard (`Desktop Companion Setup.exe`)**: Self-contained, single-file installer that prompts *"What Should I Call You?!"*, automatically deploys the app, configures desktop/start menu/startup shortcuts, and displays complete instructions.
+Live Production Portal: **[https://mycompanionhub.web.app](https://mycompanionhub.web.app)**
 
-### 💧 Group B: Hydration & Wellness Upgrades
-* **Daily Goal & Cup Tracker (System-Synced)**: Progress badge (e.g. `🥛 3 / 8 Cups Today`) with high-precision system clock synchronization. Automatically resets daily intake to 0 at midnight (00:00:00) and upon PC wake from sleep or hibernation.
-* **🌙 Quiet Hours**: Silences the companion completely during user-defined rest hours (default: `10:00 PM — 8:00 AM`). Includes a native toggle switch in **Settings > Schedule** and a quick-toggle option in the system tray menu.
-* **Meeting Mode / Smart Pause**: Right-click tray menu > `⏸️ Meeting Mode / Pause` to snooze reminders for 30 min, 1 hour, 2 hours, or the rest of the day without closing the app.
+* **Smart Device Detection**: Automatically highlights the download option matching the visitor's operating system.
+* **On-Screen QR Codes**: Point your mobile camera at your laptop screen to download the Android APK or Apple package directly.
+* **Pixel Companion Showcase**: Live interactive animation preview of all 6 companion characters (Pixel Guy, Cute Kitty, Robo Buddy, Water Slime, Forest Frog, and Spooky Ghost).
+* **SEO & Crawler Protection**: Verified crawlers allowed (Googlebot, Bingbot, Applebot, Social media link previews), aggressive scrapers blocked, and downloads safeguarded with anti-abuse headers.
+
+---
+
+## 📱 Multi-Platform Architecture
+
+```
+Desktop-Companion/
+├── companion.py, settings_dialog.py # Windows Desktop App (PyQt6 / Python)
+├── installer.py, uninstaller.py     # Windows Setup Wizard & System Uninstaller
+├── Desktop Companion*.spec          # PyInstaller build recipes
+├── build_windows.py                 # Automated one-click build script
+├── phone-companion/                 # Android Native App (Kotlin, Jetpack Compose, Material3)
+├── apple-companion/                 # Apple Universal App (SwiftUI, macOS AppKit Overlay, iOS)
+├── .github/workflows/               # GitHub Actions CI/CD (Automated macOS & iOS builds)
+├── public/                          # Firebase Hosting portal (HTML5, PWA manifest, robots.txt)
+├── firebase.json, .firebaserc       # Firebase hosting & security configuration
+└── assets/                          # Shared audio, tray icons, and custom avatar templates
+```
+
+---
+
+## 💻 1. Windows Desktop App
+
+* **Daily Goal & Cup Tracker**: Progress badge (e.g. `🥛 3 / 8 Cups Today`) with high-precision system clock synchronization. Automatically resets daily intake to 0 at midnight (00:00:00) and upon PC wake from sleep or hibernation.
+* **🌙 Quiet Hours**: Silences reminders completely during rest hours (default: `10:00 PM — 8:00 AM`). Toggleable from Settings or directly from the system tray menu.
+* **Meeting Mode / Smart Pause**: Right-click tray menu > `⏸️ Meeting Mode / Pause` to snooze reminders for 30m, 1h, 2h, or today without quitting.
 * **Multi-Break Variety**: Rotates between Hydration reminders, 20-20-20 Eye Strain breaks (`Look 20 feet away for 20 seconds 👁️`), and Posture Stretches (`Roll shoulders & stretch 🧘`).
-* **Gentle Droplet Chime**: Native droplet sound (`drip.wav`) plays softly when the companion walks onscreen (can be muted anytime in Settings).
-
-### 🐱 Group C: Companion & Avatar Polish
+* **Gentle Droplet Chime**: Native droplet sound (`drip.wav`) plays softly when the companion walks onscreen.
 * **Interactive Petting**: Click the avatar to pet it and watch floating hearts (`❤️`) float up with cute responses!
-* **Drag-and-Drop Positioning**: Click and drag the avatar horizontally across your taskbar to position it wherever convenient.
-* **Accessory Evolution**:
-  * Unlocks Cool Sunglasses (`🕶️`) at 4 cups!
-  * Unlocks the Golden Crown (`👑`) when you reach your daily hydration goal!
-* **In-Tray Skin Selector**: Easily switch between characters anytime via tray menu > `🎨 Avatars & Skins` (Pixel Guy, Cute Kitty, Robo Buddy, Water Slime, Forest Frog, Spooky Ghost, or Custom GIFs).
-* **0.0% CPU Optimization**: Idle animation timers completely pause when offscreen, ensuring zero measurable CPU drain in the background.
+* **Zero Idle CPU**: Animation timers stop completely when offscreen, ensuring zero background CPU drain.
 
----
+### Windows Development & Building on a New PC:
+```powershell
+# 1. Setup Python Virtual Environment
+python -m venv .venv
+.venv\Scripts\activate
 
-## 📦 How to Share with Colleagues
+# 2. Install Dependencies
+pip install -r requirements.txt
 
-Simply share the single installer file:
+# 3. Run Directly
+python companion.py
+
+# 4. Automate Full Build (App, Uninstaller, Setup.exe, and Download Zip)
+python build_windows.py
 ```
-Desktop Companion Setup.exe
+
+---
+
+## 🤖 2. Android App (Phone Companion)
+
+* Built with **Jetpack Compose**, **Kotlin Coroutines**, and **Material Design 3**.
+* Includes full hydration progress cards, character selection, alarm/notification manager, and sound/haptics.
+* Supports Android 8.0 (API 26) through Android 15+.
+
+### Android Development & Building on a New PC:
+```powershell
+cd phone-companion
+
+# Build Debug APK
+./gradlew assembleDebug
+
+# Build Release APK
+./gradlew assembleRelease
 ```
-* **No Python, Git, or administrative privileges required.**
-* When your colleague launches `Desktop Companion Setup.exe`:
-  1. It asks: *"What Should I Call You?!"*
-  2. Extracts all dependencies cleanly into `%LocalAppData%\Programs\Desktop Companion`.
-  3. Creates Desktop, Start Menu, and Windows Startup shortcuts.
-  4. Registers the app in Windows Settings so they can manage or uninstall it anytime.
-  5. Shows an instruction overview with a button to launch immediately.
+Or open the `phone-companion` directory in **Android Studio** and click **Run**.
 
 ---
 
-## ⏰ Work Hours Schedule & Quiet Hours
+## 🍎 3. Apple App (macOS & iOS)
 
-* **Active Working Days:** Monday to Friday (Customizable)
-* **Active Working Hours:** 9:00 AM to 6:30 PM (Customizable)
-* **🌙 Quiet Hours:** 10:00 PM to 8:00 AM (Toggleable & Customizable)
-* **Default Interval:** Every 30 minutes during active hours (with 15-minute snooze).
-* **Drift-Free Clock Sync:** Runs a lightweight system clock check every 10 seconds. Automatically triggers schedule start when workday opens (e.g. 9:00 AM) and recovers seamlessly from laptop sleep/hibernation.
+* Built with pure **SwiftUI** and native **Combine** architecture.
+* **macOS Target**: Floats as a transparent desktop pet overlay across multi-monitor spaces with taskbar dock/menu bar controls.
+* **iOS Target**: Interactive wellness tracker, home screen widgets, and lock screen hydration notifications.
+* **Automated Cloud CI/CD**: Pushing to `main` runs `.github/workflows/build-apple.yml` on a GitHub `macos-latest` runner with Xcode to build `.dmg` and `.ipa` artifacts automatically.
 
----
-
-## 🖱️ System Tray Menu
-
-Right-click the **💧 Water Droplet** icon in the Windows taskbar tray (or inside the `^` notification overflow):
-
-* **💧 Summon Companion** — Immediately brings the companion onto the screen.
-* **🎨 Avatars & Skins** — Pick any character or enable dynamic cycling.
-* **⏸️ Meeting Mode / Pause** — Silence reminders for 30m, 1h, 2h, or today.
-* **📅 Schedule & Quiet Hours** — View active schedule summary and toggle Quiet Hours on/off with 1 click.
-* **⚙️ Settings...** — Opens the visual configuration panel.
-* **📁 Open App Folder** — Opens the installation folder and `custom_avatars` directory.
-* **❌ Exit** — Completely closes the companion service.
-
-*(Tip: Left-clicking the 💧 icon will also summon the companion immediately!)*
+### Apple Development on a Mac:
+```bash
+cd apple-companion
+open "Apple Companion.xcodeproj"
+# Press Cmd + R in Xcode to build and run
+```
 
 ---
 
-## 🗑️ How to Uninstall
+## 🔥 4. Firebase Web Portal & Hosting
 
-Desktop Companion provides two easy uninstall methods:
+* Hosted on Firebase Hosting Spark plan.
+* Includes smart device detection, on-screen QR codes, OpenGraph link unfurling cards for WhatsApp/LinkedIn/Slack, PWA manifest, and Google Analytics 4 integration (`G-DDFQ122CDZ`).
 
-1. **Via Windows Settings**:
-   * Open **Windows Settings > Apps > Installed apps** (or *Apps & features*).
-   * Search for **Desktop Companion**.
-   * Click the three dots `...` and select **Uninstall**.
-
-2. **Via Start Menu**:
-   * Open the Start Menu, search for **Uninstall Desktop Companion**, and click it.
-   * You can choose whether to keep or delete your imported avatars and saved preferences.
-
----
-
-## 🔄 Upgrading from Earlier Versions
-
-**You do NOT need to manually uninstall or delete files from Version 1.**
-* The Version 2.0 installer (`Desktop Companion Setup.exe`) automatically detects any running instances of Desktop Companion, closes them safely, upgrades the core binaries, updates Windows registry entries, and **completely preserves your existing user name, configuration, and custom avatars** in `assets/custom_avatars/`.
+### Deploying to Firebase on a New PC:
+```powershell
+npm install -g firebase-tools
+firebase login
+firebase deploy --only hosting
+```
 
 ---
 
-## 🛡️ Software Security & Stability Hardening
+## 📦 Colleague Distribution Package
 
-* **Zero External Dependencies**: Bundles isolated Python runtimes and Qt libraries into a single file — no Python, Git, or VC++ Redistributable installations required on client machines.
-* **Non-Elevated Execution**: Installs cleanly into standard user space (`%LocalAppData%\Programs\Desktop Companion`) with zero UAC / Administrator privileges needed.
-* **Zip-Slip Directory Traversal Defense**: Strict canonical path validation during payload extraction.
-* **Safe Avatar Importation**: Strict whitelist (`.gif`, `.png`), 15 MB file size limit, and image file header integrity checks via `QImageReader` to prevent malicious payloads or memory crashes.
+Simply share:
+* **Windows**: `Desktop Companion Setup.exe` (or `Desktop-Companion-Windows.zip`) — Zero dependencies, non-admin install to `%LocalAppData%\Programs\Desktop Companion`.
+* **Android**: `Phone Companion.apk` (or `Phone-Companion-Android.zip`).
+* **Apple**: `Apple Companion (iOS & macOS).zip` or download the pre-compiled `.dmg`/`.ipa` from the GitHub Actions Artifacts tab.
+* **Web**: Share [https://mycompanionhub.web.app](https://mycompanionhub.web.app).
+
+---
+
+## 🛡️ Security & Hardening
+
+* **Non-Elevated Execution**: Windows app runs strictly in user space with zero administrator or UAC prompts.
+* **Zip-Slip Traversal Protection**: Canonical path validation during archive extraction.
+* **Safe Avatar Importation**: Strict file extension whitelisting (`.gif`, `.png`), 15 MB file size limit, and header validation via `QImageReader`.
 * **Hardened Local IPC**: Local communication channel (`companion_ipc`) is restricted to whitelisted commands (`SUMMON`), rate-limited to 1.5s, with bounded buffers to prevent buffer overflows or local DoS.
 * **Memory & GDI Leak Prevention**: All drawing routines explicitly terminate painters to prevent Windows GDI handle exhaustion over long multi-day runtimes.
-
+* **Web Headers**: Strict CSP, HSTS with preload, `X-Content-Type-Options: nosniff`, and `X-Frame-Options: DENY`.
