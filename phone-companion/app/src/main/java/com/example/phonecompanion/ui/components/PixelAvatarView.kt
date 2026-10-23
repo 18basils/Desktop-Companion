@@ -354,6 +354,10 @@ fun PixelAvatarView(
                     "Slime" -> drawSlime(centerX, centerY, isHappy, isBlinking, bobOffset)
                     "Frog" -> drawFrog(centerX, centerY, isHappy, isBlinking)
                     "Ghost" -> drawGhost(centerX, centerY, isHappy, isBlinking, bobOffset)
+                    "Playful Puppy" -> drawPuppy(centerX, centerY, isHappy, isBlinking)
+                    "Rubber Duck" -> drawDuck(centerX, centerY, isHappy, isBlinking)
+                    "Mini Dino" -> drawDino(centerX, centerY, isHappy, isBlinking)
+                    "Honey Bear" -> drawBear(centerX, centerY, isHappy, isBlinking)
                     else -> drawPixelGuy(centerX, centerY, isHappy, isBlinking)
                 }
 
@@ -809,6 +813,147 @@ private fun DrawScope.drawGhost(cx: Float, cy: Float, happy: Boolean, blinking: 
     // Rosy Cheeks
     drawCircle(Color(0xFFFDA4AF).copy(alpha = 0.75f), radius = 5.5f, center = Offset(cx - 21f, cy - 1f))
     drawCircle(Color(0xFFFDA4AF).copy(alpha = 0.75f), radius = 5.5f, center = Offset(cx + 21f, cy - 1f))
+}
+
+private fun DrawScope.drawPuppy(cx: Float, cy: Float, happy: Boolean, blinking: Boolean) {
+    val furGold = Color(0xFFF59E0B)
+    val earBrown = Color(0xFFB45309)
+    val chestCream = Color(0xFFFEF3C7)
+
+    // Puppy Body
+    drawRoundRect(furGold, topLeft = Offset(cx - 26f, cy - 10f), size = Size(52f, 44f), cornerRadius = CornerRadius(14f, 14f))
+    drawRoundRect(chestCream, topLeft = Offset(cx - 14f, cy + 2f), size = Size(28f, 26f), cornerRadius = CornerRadius(10f, 10f))
+
+    // Head
+    drawRoundRect(furGold, topLeft = Offset(cx - 24f, cy - 38f), size = Size(48f, 36f), cornerRadius = CornerRadius(16f, 16f))
+
+    // Floppy Ears
+    drawRoundRect(earBrown, topLeft = Offset(cx - 32f, cy - 32f), size = Size(12f, 28f), cornerRadius = CornerRadius(6f, 6f))
+    drawRoundRect(earBrown, topLeft = Offset(cx + 20f, cy - 32f), size = Size(12f, 28f), cornerRadius = CornerRadius(6f, 6f))
+
+    // Snout & Button Nose
+    drawRoundRect(chestCream, topLeft = Offset(cx - 12f, cy - 18f), size = Size(24f, 18f), cornerRadius = CornerRadius(8f, 8f))
+    drawOval(Color(0xFF0F172A), topLeft = Offset(cx - 5f, cy - 18f), size = Size(10f, 8f))
+
+    // Eyes
+    if (blinking) {
+        drawLine(Color(0xFF0F172A), Offset(cx - 16f, cy - 26f), Offset(cx - 6f, cy - 26f), strokeWidth = 3f)
+        drawLine(Color(0xFF0F172A), Offset(cx + 6f, cy - 26f), Offset(cx + 16f, cy - 26f), strokeWidth = 3f)
+    } else {
+        drawCircle(Color(0xFF0F172A), radius = 4f, center = Offset(cx - 12f, cy - 26f))
+        drawCircle(Color.White, radius = 1.5f, center = Offset(cx - 13f, cy - 27f))
+        drawCircle(Color(0xFF0F172A), radius = 4f, center = Offset(cx + 12f, cy - 26f))
+        drawCircle(Color.White, radius = 1.5f, center = Offset(cx + 11f, cy - 27f))
+    }
+
+    // Happy Tongue
+    if (happy) {
+        drawRoundRect(Color(0xFFF43F5E), topLeft = Offset(cx - 5f, cy - 4f), size = Size(10f, 12f), cornerRadius = CornerRadius(5f, 5f))
+    }
+
+    // Paws
+    drawRoundRect(earBrown, topLeft = Offset(cx - 20f, cy + 30f), size = Size(14f, 12f), cornerRadius = CornerRadius(6f, 6f))
+    drawRoundRect(earBrown, topLeft = Offset(cx + 6f, cy + 30f), size = Size(14f, 12f), cornerRadius = CornerRadius(6f, 6f))
+}
+
+private fun DrawScope.drawDuck(cx: Float, cy: Float, happy: Boolean, blinking: Boolean) {
+    val yellowBody = Color(0xFFFACC15)
+    val beakOrange = Color(0xFFF97316)
+    val wingGold = Color(0xFFEAB308)
+
+    // Plump Duck Body
+    drawOval(yellowBody, topLeft = Offset(cx - 28f, cy - 14f), size = Size(56f, 42f))
+
+    // Head
+    drawCircle(Color(0xFFFDE047), radius = 20f, center = Offset(cx, cy - 24f))
+
+    // Orange Duck Bill
+    drawRoundRect(beakOrange, topLeft = Offset(cx + 10f, cy - 20f), size = Size(20f, 12f), cornerRadius = CornerRadius(6f, 6f))
+
+    // Eye
+    if (blinking) {
+        drawLine(Color(0xFF0F172A), Offset(cx - 4f, cy - 26f), Offset(cx + 6f, cy - 26f), strokeWidth = 3f)
+    } else {
+        drawCircle(Color(0xFF0F172A), radius = 4f, center = Offset(cx + 2f, cy - 26f))
+        drawCircle(Color.White, radius = 1.5f, center = Offset(cx + 1f, cy - 27f))
+    }
+
+    // Flapping Wing
+    drawRoundRect(wingGold, topLeft = Offset(cx - 22f, cy - 6f), size = Size(22f, 20f), cornerRadius = CornerRadius(10f, 10f))
+
+    // Webbed Feet
+    drawRoundRect(beakOrange, topLeft = Offset(cx - 18f, cy + 24f), size = Size(14f, 8f), cornerRadius = CornerRadius(4f, 4f))
+    drawRoundRect(beakOrange, topLeft = Offset(cx + 4f, cy + 24f), size = Size(14f, 8f), cornerRadius = CornerRadius(4f, 4f))
+}
+
+private fun DrawScope.drawDino(cx: Float, cy: Float, happy: Boolean, blinking: Boolean) {
+    val dinoGreen = Color(0xFF10B981)
+    val bellyMint = Color(0xFFA7F3D0)
+    val spikeGold = Color(0xFFF59E0B)
+
+    // Dino Body & Belly
+    drawRoundRect(dinoGreen, topLeft = Offset(cx - 24f, cy - 14f), size = Size(48f, 44f), cornerRadius = CornerRadius(14f, 14f))
+    drawRoundRect(bellyMint, topLeft = Offset(cx - 10f, cy - 2f), size = Size(24f, 28f), cornerRadius = CornerRadius(10f, 10f))
+
+    // Head & Snout
+    drawRoundRect(Color(0xFF34D399), topLeft = Offset(cx - 18f, cy - 40f), size = Size(42f, 32f), cornerRadius = CornerRadius(14f, 14f))
+
+    // Dorsal Spikes
+    drawCircle(spikeGold, radius = 5f, center = Offset(cx - 18f, cy - 36f))
+    drawCircle(spikeGold, radius = 6f, center = Offset(cx - 22f, cy - 18f))
+    drawCircle(spikeGold, radius = 6f, center = Offset(cx - 24f, cy - 2f))
+
+    // Eye
+    if (blinking) {
+        drawLine(Color(0xFF0F172A), Offset(cx + 4f, cy - 28f), Offset(cx + 14f, cy - 28f), strokeWidth = 3f)
+    } else {
+        drawCircle(Color(0xFF0F172A), radius = 4f, center = Offset(cx + 8f, cy - 28f))
+        drawCircle(Color.White, radius = 1.5f, center = Offset(cx + 7f, cy - 29f))
+    }
+
+    // Little Dino Arm
+    drawRoundRect(dinoGreen, topLeft = Offset(cx + 12f, cy + 2f), size = Size(14f, 7f), cornerRadius = CornerRadius(4f, 4f))
+
+    // Sturdy Feet
+    drawRoundRect(Color(0xFF059669), topLeft = Offset(cx - 18f, cy + 26f), size = Size(14f, 10f), cornerRadius = CornerRadius(5f, 5f))
+    drawRoundRect(Color(0xFF059669), topLeft = Offset(cx + 4f, cy + 26f), size = Size(14f, 10f), cornerRadius = CornerRadius(5f, 5f))
+}
+
+private fun DrawScope.drawBear(cx: Float, cy: Float, happy: Boolean, blinking: Boolean) {
+    val bearBrown = Color(0xFF92400E)
+    val snoutHoney = Color(0xFFFDE68A)
+
+    // Bear Body & Honey Patch
+    drawRoundRect(bearBrown, topLeft = Offset(cx - 26f, cy - 12f), size = Size(52f, 44f), cornerRadius = CornerRadius(16f, 16f))
+    drawOval(snoutHoney, topLeft = Offset(cx - 14f, cy + 2f), size = Size(28f, 26f))
+
+    // Round Bear Ears
+    drawCircle(bearBrown, radius = 10f, center = Offset(cx - 22f, cy - 36f))
+    drawCircle(snoutHoney, radius = 5f, center = Offset(cx - 22f, cy - 36f))
+    drawCircle(bearBrown, radius = 10f, center = Offset(cx + 22f, cy - 36f))
+    drawCircle(snoutHoney, radius = 5f, center = Offset(cx + 22f, cy - 36f))
+
+    // Head
+    drawCircle(bearBrown, radius = 22f, center = Offset(cx, cy - 22f))
+
+    // Honey Muzzle & Heart Nose
+    drawOval(snoutHoney, topLeft = Offset(cx - 12f, cy - 18f), size = Size(24f, 16f))
+    drawOval(Color(0xFF0F172A), topLeft = Offset(cx - 5f, cy - 16f), size = Size(10f, 7f))
+
+    // Eyes
+    if (blinking) {
+        drawLine(Color(0xFF0F172A), Offset(cx - 16f, cy - 26f), Offset(cx - 8f, cy - 26f), strokeWidth = 3f)
+        drawLine(Color(0xFF0F172A), Offset(cx + 8f, cy - 26f), Offset(cx + 16f, cy - 26f), strokeWidth = 3f)
+    } else {
+        drawCircle(Color(0xFF0F172A), radius = 3.5f, center = Offset(cx - 12f, cy - 26f))
+        drawCircle(Color.White, radius = 1.2f, center = Offset(cx - 13f, cy - 27f))
+        drawCircle(Color(0xFF0F172A), radius = 3.5f, center = Offset(cx + 12f, cy - 26f))
+        drawCircle(Color.White, radius = 1.2f, center = Offset(cx + 11f, cy - 27f))
+    }
+
+    // Paws
+    drawRoundRect(Color(0xFF78350F), topLeft = Offset(cx - 20f, cy + 28f), size = Size(14f, 10f), cornerRadius = CornerRadius(5f, 5f))
+    drawRoundRect(Color(0xFF78350F), topLeft = Offset(cx + 6f, cy + 28f), size = Size(14f, 10f), cornerRadius = CornerRadius(5f, 5f))
 }
 
 private fun DrawScope.drawHeart(x: Float, y: Float, scale: Float, alpha: Float, color: Color) {

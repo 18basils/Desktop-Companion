@@ -55,7 +55,11 @@ fun AvatarSelectorCard(
         CompanionInfo("Robo Buddy", "🤖", "Cyber Guardian", Color(0xFF06B6D4)),
         CompanionInfo("Slime", "🟢", "Bouncy Jelly", Color(0xFF10B981)),
         CompanionInfo("Frog", "🐸", "Joyful Hopper", Color(0xFF22C55E)),
-        CompanionInfo("Ghost", "👻", "Friendly Spirit", Color(0xFFA855F7))
+        CompanionInfo("Ghost", "👻", "Friendly Spirit", Color(0xFFA855F7)),
+        CompanionInfo("Playful Puppy", "🐶", "Loyal Buddy", Color(0xFFF59E0B)),
+        CompanionInfo("Rubber Duck", "🦆", "Debug Master", Color(0xFFFACC15)),
+        CompanionInfo("Mini Dino", "🦖", "Prehistoric Pal", Color(0xFF10B981)),
+        CompanionInfo("Honey Bear", "🐻", "Warm & Cozy", Color(0xFF92400E))
     )
 
     Box(

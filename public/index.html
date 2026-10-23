@@ -256,8 +256,101 @@
     }
 
     .platform-icon {
-      font-size: 2.2rem;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 64px;
+    }
+
+    .svg-3d {
+      width: 58px;
+      height: 58px;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .platform-card:hover .svg-3d {
+      transform: scale(1.15) translateY(-4px);
+    }
+
+    /* Avatar Pack Banner Card */
+    .avatar-pack-section {
+      margin-top: 24px;
+      margin-bottom: 50px;
+    }
+
+    .avatar-pack-card {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.85) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 20px;
+      padding: 24px 28px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .avatar-pack-card:hover {
+      border-color: var(--cyan-neon);
+      box-shadow: 0 12px 36px rgba(56, 189, 248, 0.2);
+    }
+
+    .avatar-pack-badge {
+      position: absolute;
+      top: 0;
+      right: 28px;
+      background: linear-gradient(90deg, #f59e0b, #eab308);
+      color: #080c15;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      padding: 4px 12px;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+
+    .avatar-pack-content {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .avatar-pack-icon {
+      flex-shrink: 0;
+    }
+
+    .avatar-pack-text {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .avatar-pack-text h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .avatar-pack-text p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .avatar-pack-meta {
+      font-size: 0.78rem;
+      color: var(--cyan-bright);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .avatar-pack-action {
+      flex-shrink: 0;
+      text-align: center;
     }
 
     .platform-name {
@@ -506,7 +599,48 @@
 
       <!-- Windows -->
       <div id="card-windows" class="platform-card">
-        <div class="platform-icon">💻</div>
+        <div class="platform-icon">
+          <svg class="svg-3d" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="winBase" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#334155" />
+                <stop offset="100%" stop-color="#0f172a" />
+              </linearGradient>
+              <linearGradient id="winScreen" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0284c7" />
+                <stop offset="50%" stop-color="#0369a1" />
+                <stop offset="100%" stop-color="#075985" />
+              </linearGradient>
+              <linearGradient id="winLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#38bdf8" />
+                <stop offset="100%" stop-color="#0284c7" />
+              </linearGradient>
+              <radialGradient id="winGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.45" />
+                <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+              </radialGradient>
+              <filter id="winShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.5"/>
+              </filter>
+            </defs>
+            <ellipse cx="32" cy="54" rx="24" ry="6" fill="url(#winGlow)" />
+            <polygon points="6,50 32,58 58,50 32,44" fill="url(#winBase)" filter="url(#winShadow)" />
+            <polygon points="6,50 32,58 32,60 6,52" fill="#1e293b" />
+            <polygon points="32,58 58,50 58,52 32,60" fill="#0f172a" />
+            <polygon points="16,48 32,53 48,48 32,45" fill="#1e293b" opacity="0.8" />
+            <polygon points="26,52 32,54 38,52 32,50" fill="#38bdf8" opacity="0.4" />
+            <polygon points="12,12 52,12 52,44 12,44" fill="#0f172a" stroke="#475569" stroke-width="1.5" />
+            <rect x="15" y="15" width="34" height="26" rx="2" fill="url(#winScreen)" />
+            <polygon points="15,15 28,15 15,28" fill="#ffffff" opacity="0.18" />
+            <g transform="translate(25, 21)">
+              <rect x="0" y="0" width="6" height="6" rx="0.8" fill="url(#winLogo)" />
+              <rect x="7.5" y="0" width="6" height="6" rx="0.8" fill="url(#winLogo)" />
+              <rect x="0" y="7.5" width="6" height="6" rx="0.8" fill="url(#winLogo)" />
+              <rect x="7.5" y="7.5" width="6" height="6" rx="0.8" fill="url(#winLogo)" />
+            </g>
+            <circle cx="32" cy="42.5" r="0.8" fill="#38bdf8" />
+          </svg>
+        </div>
         <div class="platform-name">Windows 10 / 11</div>
         <div class="platform-detail">Setup Wizard inside .zip • x64 • ~71 MB</div>
         <a href="downloads/Desktop-Companion-Windows.zip" class="btn-download-small" download>Download .zip</a>
@@ -514,7 +648,45 @@
 
       <!-- Android -->
       <div id="card-android" class="platform-card">
-        <div class="platform-icon">📱</div>
+        <div class="platform-icon">
+          <svg class="svg-3d" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="andrBody" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#10b981" />
+                <stop offset="100%" stop-color="#047857" />
+              </linearGradient>
+              <linearGradient id="andrScreen" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0f172a" />
+                <stop offset="100%" stop-color="#022c22" />
+              </linearGradient>
+              <linearGradient id="andrHead" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#34d399" />
+                <stop offset="100%" stop-color="#10b981" />
+              </linearGradient>
+              <radialGradient id="andrGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#10b981" stop-opacity="0.4" />
+                <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+              </radialGradient>
+              <filter id="andrShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="5" stdDeviation="3.5" flood-color="#000000" flood-opacity="0.55"/>
+              </filter>
+            </defs>
+            <ellipse cx="32" cy="56" rx="18" ry="5" fill="url(#andrGlow)" />
+            <rect x="18" y="10" width="28" height="46" rx="7" fill="#064e3b" filter="url(#andrShadow)" />
+            <rect x="17" y="8" width="28" height="46" rx="7" fill="url(#andrBody)" stroke="#34d399" stroke-width="1.2" />
+            <rect x="19.5" y="11" width="23" height="40" rx="4" fill="url(#andrScreen)" />
+            <polygon points="19.5,11 32,11 19.5,26" fill="#ffffff" opacity="0.14" />
+            <g transform="translate(23.5, 23)">
+              <line x1="3" y1="2" x2="1" y2="-2" stroke="#34d399" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="12" y1="2" x2="14" y2="-2" stroke="#34d399" stroke-width="1.5" stroke-linecap="round" />
+              <path d="M 0 10 A 7.5 7.5 0 0 1 15 10 Z" fill="url(#andrHead)" />
+              <circle cx="4" cy="6.5" r="1" fill="#0f172a" />
+              <circle cx="11" cy="6.5" r="1" fill="#0f172a" />
+            </g>
+            <circle cx="31" cy="13.5" r="1" fill="#334155" />
+            <rect x="27" y="48" width="8" height="1.5" rx="0.75" fill="#34d399" opacity="0.8" />
+          </svg>
+        </div>
         <div class="platform-name">Android Phone</div>
         <div class="platform-detail">APK package inside .zip • ~7.6 MB</div>
         <a href="downloads/Phone-Companion-Android.zip" class="btn-download-small" download>Download .zip</a>
@@ -522,7 +694,46 @@
 
       <!-- macOS -->
       <div id="card-macos" class="platform-card">
-        <div class="platform-icon">🍏</div>
+        <div class="platform-icon">
+          <svg class="svg-3d" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="macBody" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#f8fafc" />
+                <stop offset="50%" stop-color="#cbd5e1" />
+                <stop offset="100%" stop-color="#64748b" />
+              </linearGradient>
+              <linearGradient id="macScreen" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1e1b4b" />
+                <stop offset="50%" stop-color="#312e81" />
+                <stop offset="100%" stop-color="#4338ca" />
+              </linearGradient>
+              <linearGradient id="macApple" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="100%" stop-color="#94a3b8" />
+              </linearGradient>
+              <radialGradient id="macGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#818cf8" stop-opacity="0.4" />
+                <stop offset="100%" stop-color="#818cf8" stop-opacity="0" />
+              </radialGradient>
+              <filter id="macShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="4" stdDeviation="3.5" flood-color="#000000" flood-opacity="0.5"/>
+              </filter>
+            </defs>
+            <ellipse cx="32" cy="54" rx="22" ry="5.5" fill="url(#macGlow)" />
+            <polygon points="8,50 32,56 56,50 32,45" fill="url(#macBody)" filter="url(#macShadow)" />
+            <polygon points="8,50 32,56 32,58 8,52" fill="#475569" />
+            <polygon points="32,56 56,50 56,52 32,58" fill="#334155" />
+            <polygon points="18,48 32,52 46,48 32,46" fill="#1e293b" opacity="0.8" />
+            <polygon points="27,51 32,52.5 37,51 32,49.5" fill="#f8fafc" opacity="0.35" />
+            <rect x="14" y="11" width="36" height="34" rx="3.5" fill="#0f172a" stroke="url(#macBody)" stroke-width="1.2" />
+            <rect x="16.5" y="13.5" width="31" height="26" rx="2" fill="url(#macScreen)" />
+            <polygon points="16.5,13.5 28,13.5 16.5,26" fill="#ffffff" opacity="0.18" />
+            <g transform="translate(26.5, 20.5) scale(0.6)">
+              <path d="M12.5,1 C11.5,3.2 9,4.5 9,4.5 C9,4.5 10.8,4.8 12,2.8 C13.2,0.8 12.5,1 12.5,1 Z" fill="url(#macApple)" />
+              <path d="M15,9.5 C14.9,7.5 16.6,6.3 16.7,6.2 C15.7,4.8 14.1,4.6 13.5,4.5 C12.1,4.3 10.7,5.3 10,5.3 C9.3,5.3 8.1,4.5 7,4.5 C5.5,4.5 4,5.4 3.2,6.9 C1.5,9.8 2.8,14.1 4.4,16.5 C5.2,17.7 6.1,19 7.4,18.9 C8.6,18.9 9.1,18.1 10.5,18.1 C11.9,18.1 12.3,18.9 13.6,18.9 C14.9,18.9 15.7,17.7 16.5,16.5 C17.4,15.2 17.8,13.9 17.8,13.8 C17.7,13.7 15.1,12.7 15,9.5 Z" fill="url(#macApple)" />
+            </g>
+          </svg>
+        </div>
         <div class="platform-name">macOS (MacBook / iMac)</div>
         <div class="platform-detail">Menu Bar App & Pet Overlay • Multiplatform</div>
         <a href="downloads/Apple-Companion.zip" class="btn-download-small" download>Download for Mac</a>
@@ -530,13 +741,100 @@
 
       <!-- iOS -->
       <div id="card-ios" class="platform-card">
-        <div class="platform-icon">📱</div>
+        <div class="platform-icon">
+          <svg class="svg-3d" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="iosTitanium" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4f46e5" />
+                <stop offset="50%" stop-color="#7c3aed" />
+                <stop offset="100%" stop-color="#2e1065" />
+              </linearGradient>
+              <linearGradient id="iosScreen" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0f172a" />
+                <stop offset="100%" stop-color="#1e1b4b" />
+              </linearGradient>
+              <radialGradient id="iosGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#a855f7" stop-opacity="0.4" />
+                <stop offset="100%" stop-color="#a855f7" stop-opacity="0" />
+              </radialGradient>
+              <filter id="iosShadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="4.5" stdDeviation="3.5" flood-color="#000000" flood-opacity="0.55"/>
+              </filter>
+            </defs>
+            <ellipse cx="32" cy="55" rx="20" ry="5.5" fill="url(#iosGlow)" />
+            <rect x="10" y="10" width="34" height="42" rx="5" fill="#1e1b4b" stroke="#6366f1" stroke-width="1.2" opacity="0.65" />
+            <rect x="12" y="12" width="30" height="38" rx="3.5" fill="#0f172a" opacity="0.8" />
+            <polygon points="12,12 26,12 12,26" fill="#ffffff" opacity="0.1" />
+            <rect x="25" y="15" width="25" height="42" rx="6" fill="#1e1b4b" filter="url(#iosShadow)" />
+            <rect x="24" y="14" width="25" height="42" rx="6" fill="url(#iosTitanium)" stroke="#a855f7" stroke-width="1.2" />
+            <rect x="26" y="16" width="21" height="38" rx="4" fill="url(#iosScreen)" />
+            <rect x="32" y="17.5" width="9" height="2.5" rx="1.25" fill="#000000" />
+            <circle cx="39" cy="18.75" r="0.6" fill="#1e293b" />
+            <polygon points="26,16 38,16 26,30" fill="#ffffff" opacity="0.18" />
+            <rect x="28.5" y="24" width="16" height="12" rx="3" fill="#38bdf8" fill-opacity="0.25" stroke="#38bdf8" stroke-width="0.8" />
+            <circle cx="33" cy="30" r="2.5" fill="#22d3ee" />
+            <rect x="38" y="27" width="5" height="2" rx="1" fill="#f8fafc" />
+            <rect x="38" y="31" width="4" height="1.5" rx="0.75" fill="#94a3b8" />
+            <rect x="32" y="50" width="9" height="1.5" rx="0.75" fill="#ffffff" opacity="0.6" />
+          </svg>
+        </div>
         <div class="platform-name">iPhone & iPad (iOS)</div>
         <div class="platform-detail">Native SwiftUI Package (.zip)</div>
         <a href="downloads/Apple-Companion.zip" class="btn-download-small" download>Download for iOS</a>
       </div>
 
     </div>
+
+    <!-- Community Avatar Expansion Pack -->
+    <section class="avatar-pack-section">
+      <div class="avatar-pack-card">
+        <div class="avatar-pack-badge">NEW EXTENSION PACK</div>
+        <div class="avatar-pack-content">
+          <div class="avatar-pack-icon">
+            <svg class="svg-3d" style="width: 72px; height: 72px; margin: 0;" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="boxGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fde047" />
+                  <stop offset="100%" stop-color="#d97706" />
+                </linearGradient>
+                <radialGradient id="boxGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.5" />
+                  <stop offset="100%" stop-color="#fbbf24" stop-opacity="0" />
+                </radialGradient>
+                <filter id="boxShadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="4" stdDeviation="3.5" flood-color="#000000" flood-opacity="0.5"/>
+                </filter>
+              </defs>
+              <ellipse cx="32" cy="54" rx="20" ry="5.5" fill="url(#boxGlow)" />
+              <polygon points="12,32 32,42 32,56 12,46" fill="#0369a1" filter="url(#boxShadow)" />
+              <polygon points="32,42 52,32 52,46 32,56" fill="#075985" />
+              <polygon points="12,32 32,22 52,32 32,42" fill="#1e1b4b" />
+              <polygon points="14,32 32,24 50,32 32,40" fill="#f59e0b" opacity="0.3" />
+              <g transform="translate(24, 8)">
+                <polygon points="8,4 10,0 12,4 16,5 13,8 14,12 8,9 2,12 3,8 0,5 4,4" fill="url(#boxGold)" />
+                <circle cx="6.5" cy="5.5" r="0.8" fill="#0f172a" />
+                <circle cx="9.5" cy="5.5" r="0.8" fill="#0f172a" />
+              </g>
+              <circle cx="16" cy="18" r="1.5" fill="#fbbf24" />
+              <circle cx="48" cy="16" r="1.5" fill="#38bdf8" />
+              <polygon points="20,36 24,38 24,52 20,50" fill="url(#boxGold)" />
+              <polygon points="40,36 44,38 44,52 40,50" fill="url(#boxGold)" />
+            </svg>
+          </div>
+          <div class="avatar-pack-text">
+            <h3>Free Community Avatar Pack (8 Extra Mascots)</h3>
+            <p>Already have Desktop Companion installed? Download this extension pack to add <b>8 new animated companions</b> (Shiba Inu, Baby Dragon, Bouncing Panda, Waddling Penguin, Chill Capybara, Pink Axolotl, Golden Star, & Magic Potion) without reinstalling or resetting your personal schedule and daily goals.</p>
+            <div class="avatar-pack-meta">⚡ Includes 1-Click Auto-Installer (Install-Avatars.bat) • Preserves your name & settings</div>
+          </div>
+          <div class="avatar-pack-action">
+            <a href="downloads/Companion-Avatar-Pack.zip" class="btn-download-hero" download style="margin: 0; padding: 12px 22px; font-size: 0.95rem;">
+              <span>🎁 Download Avatar Pack (.zip)</span>
+            </a>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 6px;">Standalone ZIP • ~12 KB</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- On-Screen Dual QR Code Hub for Mobile -->
     <div class="qr-hub">
@@ -557,7 +855,7 @@
 
     <!-- Companion Roster Showcase -->
     <section class="pets-showcase">
-      <h2 class="section-title">Meet Your 6 Pixel Companions</h2>
+      <h2 class="section-title">Meet Your 10 Pixel Companions</h2>
       <p style="text-align: center; color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">Tap on any companion to pet them and spawn love!</p>
 
       <div class="pet-grid">
@@ -595,6 +893,30 @@
           <div class="pet-emoji">👻</div>
           <div class="pet-name">Spooky Ghost</div>
           <div class="pet-role">Posture Reminder</div>
+        </div>
+
+        <div class="pet-card" onclick="petCharacter(event, '🐶 Puppy: Woof! Time for a cool fresh water break!')">
+          <div class="pet-emoji">🐶</div>
+          <div class="pet-name">Playful Puppy</div>
+          <div class="pet-role">Loyal Hydration Buddy</div>
+        </div>
+
+        <div class="pet-card" onclick="petCharacter(event, '🦆 Duck: Quack! Let\'s debug this problem together!')">
+          <div class="pet-emoji">🦆</div>
+          <div class="pet-name">Rubber Duck</div>
+          <div class="pet-role">Debug & Waddle Pal</div>
+        </div>
+
+        <div class="pet-card" onclick="petCharacter(event, '🦖 Dino: Rawr! Stand up, stretch tall, and hydrate!')">
+          <div class="pet-emoji">🦖</div>
+          <div class="pet-name">Mini Dino</div>
+          <div class="pet-role">Prehistoric Focus Coach</div>
+        </div>
+
+        <div class="pet-card" onclick="petCharacter(event, '🐻 Bear: Yawn... restful breaks make great work!')">
+          <div class="pet-emoji">🐻</div>
+          <div class="pet-name">Honey Bear</div>
+          <div class="pet-role">Warm & Cozy Rest Friend</div>
         </div>
       </div>
     </section>

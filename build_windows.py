@@ -17,6 +17,15 @@ import subprocess
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
+def get_pyinstaller_cmd():
+    venv_pyinstaller = os.path.join(ROOT_DIR, ".venv", "Scripts", "pyinstaller.exe")
+    if os.path.exists(venv_pyinstaller):
+        return [venv_pyinstaller]
+    venv_py = os.path.join(ROOT_DIR, ".venv", "Scripts", "python.exe")
+    if os.path.exists(venv_py):
+        return [venv_py, "-m", "PyInstaller"]
+    return [sys.executable, "-m", "PyInstaller"]
+
 def run_cmd(args):
     print(f"\n--> Running: {' '.join(args)}")
     res = subprocess.run(args, cwd=ROOT_DIR)
@@ -29,9 +38,11 @@ def main():
     print("  Building Desktop Companion Windows Distribution Chain")
     print("=" * 60)
 
+    pyinstaller_base = get_pyinstaller_cmd()
+
     # 1. Build Desktop Companion application folder
     print("\n[Step 1/5] Building main Desktop Companion binaries...")
-    run_cmd(["pyinstaller", "--clean", "--noconfirm", "Desktop Companion.spec"])
+    run_cmd(pyinstaller_base + ["--clean", "--noconfirm", "Desktop Companion.spec"])
 
     # 2. Package into app_payload.zip
     print("\n[Step 2/5] Creating app_payload.zip from dist/Desktop Companion...")
@@ -50,11 +61,11 @@ def main():
 
     # 3. Build Uninstaller wizard
     print("\n[Step 3/5] Building Uninstaller wizard...")
-    run_cmd(["pyinstaller", "--clean", "--noconfirm", "Uninstall Desktop Companion.spec"])
+    run_cmd(pyinstaller_base + ["--clean", "--noconfirm", "Uninstall Desktop Companion.spec"])
 
     # 4. Build Standalone Installer wizard
     print("\n[Step 4/5] Building Desktop Companion Setup.exe...")
-    run_cmd(["pyinstaller", "--clean", "--noconfirm", "Desktop Companion Setup.spec"])
+    run_cmd(pyinstaller_base + ["--clean", "--noconfirm", "Desktop Companion Setup.spec"])
 
     # 5. Package for Firebase Hosting
     print("\n[Step 5/5] Packaging into public/downloads/Desktop-Companion-Windows.zip...")

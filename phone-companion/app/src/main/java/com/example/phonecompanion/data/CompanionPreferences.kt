@@ -41,7 +41,11 @@ class CompanionPreferences(context: Context) {
             "Robo Buddy",
             "Slime",
             "Frog",
-            "Ghost"
+            "Ghost",
+            "Playful Puppy",
+            "Rubber Duck",
+            "Mini Dino",
+            "Honey Bear"
         )
     }
 

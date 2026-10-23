@@ -747,7 +747,11 @@ class SettingsDialog(QDialog):
             ("pixel_robot", "Robo Buddy 🤖"),
             ("pixel_slime", "Water Slime 💧"),
             ("pixel_frog", "Forest Frog 🐸"),
-            ("pixel_ghost", "Spooky Ghost 👻")
+            ("pixel_ghost", "Spooky Ghost 👻"),
+            ("pixel_puppy", "Playful Puppy 🐶"),
+            ("pixel_duck", "Rubber Duck 🦆"),
+            ("pixel_dino", "Mini Dino 🦖"),
+            ("pixel_bear", "Honey Bear 🐻")
         ]
         for key, name in preset_skins:
             self.combo_skin.addItem(name, key)

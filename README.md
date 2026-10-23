@@ -45,6 +45,7 @@ Desktop-Companion/
 * **Multi-Break Variety**: Rotates between Hydration reminders, 20-20-20 Eye Strain breaks (`Look 20 feet away for 20 seconds 👁️`), and Posture Stretches (`Roll shoulders & stretch 🧘`).
 * **Gentle Droplet Chime**: Native droplet sound (`drip.wav`) plays softly when the companion walks onscreen.
 * **Interactive Petting**: Click the avatar to pet it and watch floating hearts (`❤️`) float up with cute responses!
+* **18 Built-in & Community Mascots**: 10 native procedural pets (Pixel Guy, Cute Kitty, Robo Buddy, Water Slime, Forest Frog, Spooky Ghost, Playful Puppy, Rubber Duck, Mini Dino, Honey Bear) plus 8 pre-bundled animated community GIFs in `assets/custom_avatars/`.
 * **Zero Idle CPU**: Animation timers stop completely when offscreen, ensuring zero background CPU drain.
 
 ### Windows Development & Building on a New PC:

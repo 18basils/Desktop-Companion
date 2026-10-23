@@ -17,6 +17,7 @@ app.log
 build/
 dist/
 dist-apple/
+avatar_pack/
 *.egg-info/
 
 # Compiled Standalone Binaries (Whitelisting public/downloads/*.zip for complete Firebase hosting portability)

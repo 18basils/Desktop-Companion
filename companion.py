@@ -82,7 +82,11 @@ AVAILABLE_SKINS = [
     "pixel_robot",
     "pixel_slime",
     "pixel_frog",
-    "pixel_ghost"
+    "pixel_ghost",
+    "pixel_puppy",
+    "pixel_duck",
+    "pixel_dino",
+    "pixel_bear"
 ]
 
 WITTY_WATER_QUOTES = [
@@ -506,6 +510,14 @@ class AvatarWidget(QWidget):
             self.draw_frog(painter, center_x, base_y, bob_y, leg_offset, head_down_y)
         elif self.skin == "pixel_ghost":
             self.draw_ghost(painter, center_x, base_y, bob_y)
+        elif self.skin == "pixel_puppy":
+            self.draw_puppy(painter, center_x, base_y, bob_y, leg_offset, head_down_y)
+        elif self.skin == "pixel_duck":
+            self.draw_duck(painter, center_x, base_y, bob_y, leg_offset, head_down_y)
+        elif self.skin == "pixel_dino":
+            self.draw_dino(painter, center_x, base_y, bob_y, leg_offset, head_down_y)
+        elif self.skin == "pixel_bear":
+            self.draw_bear(painter, center_x, base_y, bob_y, leg_offset, head_down_y)
         else:
             self.draw_guy(painter, center_x, base_y, bob_y, leg_offset, head_down_y)
 
@@ -731,6 +743,154 @@ class AvatarWidget(QWidget):
         painter.setBrush(QColor(244, 114, 182, 180))  # Blush
         painter.drawEllipse(center_x - 10, int(ghost_y + 11), 3, 2)
         painter.drawEllipse(center_x + 7, int(ghost_y + 11), 3, 2)
+
+    def draw_puppy(self, painter, center_x, base_y, bob_y, leg_offset, head_down_y):
+        dog_y = base_y - 20 + bob_y
+        painter.setPen(Qt.PenStyle.NoPen)
+        # Golden Fur Body
+        painter.setBrush(QColor(217, 119, 6))
+        painter.drawRect(center_x - 12, dog_y, 24, 16)
+        # Cream Chest
+        painter.setBrush(QColor(254, 243, 199))
+        painter.drawRect(center_x - 6, dog_y + 4, 12, 10)
+
+        # Head
+        head_y = dog_y - 14 + head_down_y
+        painter.setBrush(QColor(245, 158, 11))
+        painter.drawRect(center_x - 11, head_y, 22, 16)
+
+        # Floppy Ears (bobs with animation)
+        painter.setBrush(QColor(180, 83, 9))
+        painter.drawRect(center_x - 15, head_y + 1, 5, 12)
+        painter.drawRect(center_x + 10, head_y + 1, 5, 12)
+
+        # Muzzle & Nose
+        painter.setBrush(QColor(254, 243, 199))
+        painter.drawRect(center_x - 5, head_y + 8, 10, 7)
+        painter.setBrush(QColor(15, 23, 42))
+        painter.drawRect(center_x - 2, head_y + 7, 4, 3)
+
+        # Eyes & Happy Tongue
+        if self.state == "CELEBRATING" or self.state == "IDLE":
+            painter.setBrush(QColor(244, 63, 94))  # Little pink tongue
+            painter.drawRect(center_x - 2, head_y + 13, 4, 4)
+        painter.setBrush(QColor(15, 23, 42))
+        painter.drawRect(center_x - 6, head_y + 4, 3, 3)
+        painter.drawRect(center_x + 3, head_y + 4, 3, 3)
+
+        # Stepping Paws & Wagging Tail
+        painter.setBrush(QColor(180, 83, 9))
+        painter.drawRect(center_x - 10, base_y - 4 + leg_offset, 6, 6)
+        painter.drawRect(center_x + 4, base_y - 4 - leg_offset, 6, 6)
+        # Tail wagging with leg_offset
+        tail_wag = int(leg_offset * 1.5)
+        painter.drawRect(center_x - 16, dog_y + 2 + tail_wag, 4, 8)
+
+    def draw_duck(self, painter, center_x, base_y, bob_y, leg_offset, head_down_y):
+        duck_y = base_y - 20 + bob_y
+        painter.setPen(Qt.PenStyle.NoPen)
+        # Yellow Plump Body
+        painter.setBrush(QColor(250, 204, 21))
+        painter.drawRect(center_x - 11, duck_y, 22, 16)
+
+        # Head
+        head_y = duck_y - 12 + head_down_y
+        painter.setBrush(QColor(254, 224, 71))
+        painter.drawRect(center_x - 8, head_y, 16, 14)
+
+        # Orange Bill / Beak
+        painter.setBrush(QColor(249, 115, 22))
+        painter.drawRect(center_x + 6, head_y + 5, 8, 5)
+
+        # Eye with glimmer
+        painter.setBrush(QColor(15, 23, 42))
+        painter.drawRect(center_x + 1, head_y + 4, 3, 3)
+        painter.setBrush(QColor(255, 255, 255))
+        painter.drawRect(center_x + 1, head_y + 4, 1, 1)
+
+        # Little Wing
+        painter.setBrush(QColor(234, 179, 8))
+        painter.drawRect(center_x - 9, duck_y + 3, 8, 8)
+
+        # Orange Webbed Feet waddling
+        painter.setBrush(QColor(234, 88, 12))
+        painter.drawRect(center_x - 7, base_y - 4 + leg_offset, 6, 5)
+        painter.drawRect(center_x + 2, base_y - 4 - leg_offset, 6, 5)
+
+    def draw_dino(self, painter, center_x, base_y, bob_y, leg_offset, head_down_y):
+        dino_y = base_y - 22 + bob_y
+        painter.setPen(Qt.PenStyle.NoPen)
+        # Emerald Dino Body
+        painter.setBrush(QColor(16, 185, 129))
+        painter.drawRect(center_x - 10, dino_y, 20, 18)
+
+        # Soft Mint Belly
+        painter.setBrush(QColor(167, 243, 208))
+        painter.drawRect(center_x - 4, dino_y + 4, 10, 12)
+
+        # Head & Big Snout
+        head_y = dino_y - 14 + head_down_y
+        painter.setBrush(QColor(52, 211, 153))
+        painter.drawRect(center_x - 8, head_y, 18, 15)
+        painter.drawRect(center_x + 4, head_y + 5, 6, 8)  # Snout
+
+        # Eye
+        painter.setBrush(QColor(15, 23, 42))
+        painter.drawRect(center_x + 2, head_y + 4, 3, 3)
+
+        # Back Spikes (Orange Dino Ridges)
+        painter.setBrush(QColor(245, 158, 11))
+        painter.drawPolygon(QPolygonF([QPointF(center_x - 8, head_y + 1), QPointF(center_x - 12, head_y - 3), QPointF(center_x - 8, head_y - 1)]))
+        painter.drawPolygon(QPolygonF([QPointF(center_x - 10, dino_y + 4), QPointF(center_x - 14, dino_y + 1), QPointF(center_x - 10, dino_y + 2)]))
+        painter.drawPolygon(QPolygonF([QPointF(center_x - 10, dino_y + 12), QPointF(center_x - 14, dino_y + 9), QPointF(center_x - 10, dino_y + 10)]))
+
+        # Tiny Dino Arms
+        painter.setBrush(QColor(16, 185, 129))
+        painter.drawRect(center_x + 4, dino_y + 6, 5, 3)
+
+        # Tail & Feet
+        painter.drawRect(center_x - 16, dino_y + 8, 6, 6)
+        painter.setBrush(QColor(5, 150, 105))
+        painter.drawRect(center_x - 8, base_y - 4 + leg_offset, 6, 6)
+        painter.drawRect(center_x + 2, base_y - 4 - leg_offset, 6, 6)
+
+    def draw_bear(self, painter, center_x, base_y, bob_y, leg_offset, head_down_y):
+        bear_y = base_y - 22 + bob_y
+        painter.setPen(Qt.PenStyle.NoPen)
+        # Warm Bear Body
+        painter.setBrush(QColor(146, 64, 14))
+        painter.drawRect(center_x - 12, bear_y, 24, 18)
+
+        # Honey Belly Patch
+        painter.setBrush(QColor(253, 230, 138))
+        painter.drawRect(center_x - 6, bear_y + 4, 12, 12)
+
+        # Head
+        head_y = bear_y - 14 + head_down_y
+        painter.setBrush(QColor(180, 83, 9))
+        painter.drawRect(center_x - 10, head_y, 20, 15)
+
+        # Round Bear Ears with Tan Insets
+        painter.setBrush(QColor(146, 64, 14))
+        painter.drawEllipse(center_x - 12, int(head_y - 4), 6, 6)
+        painter.drawEllipse(center_x + 6, int(head_y - 4), 6, 6)
+        painter.setBrush(QColor(253, 230, 138))
+        painter.drawEllipse(center_x - 11, int(head_y - 3), 4, 4)
+        painter.drawEllipse(center_x + 7, int(head_y - 3), 4, 4)
+
+        # Muzzle & Heart Nose
+        painter.drawRect(center_x - 5, head_y + 7, 10, 6)
+        painter.setBrush(QColor(15, 23, 42))
+        painter.drawRect(center_x - 2, head_y + 7, 4, 3)
+
+        # Eyes
+        painter.drawRect(center_x - 6, head_y + 4, 3, 3)
+        painter.drawRect(center_x + 3, head_y + 4, 3, 3)
+
+        # Sturdy Bear Paws
+        painter.setBrush(QColor(120, 53, 15))
+        painter.drawRect(center_x - 9, base_y - 4 + leg_offset, 6, 6)
+        painter.drawRect(center_x + 3, base_y - 4 - leg_offset, 6, 6)
 
 
 class SpeechBubble(QWidget):
@@ -1113,7 +1273,11 @@ class DesktopCompanion(QWidget):
             ("pixel_robot", "Robo Buddy 🤖"),
             ("pixel_slime", "Water Slime 💧"),
             ("pixel_frog", "Forest Frog 🐸"),
-            ("pixel_ghost", "Spooky Ghost 👻")
+            ("pixel_ghost", "Spooky Ghost 👻"),
+            ("pixel_puppy", "Playful Puppy 🐶"),
+            ("pixel_duck", "Rubber Duck 🦆"),
+            ("pixel_dino", "Mini Dino 🦖"),
+            ("pixel_bear", "Honey Bear 🐻")
         ]
         for key, name in preset_skins:
             act = menu.addAction(name)
