@@ -228,6 +228,8 @@
       text-align: center;
       transition: all 0.2s ease;
       position: relative;
+      display: flex;
+      flex-direction: column;
     }
 
     .platform-card:hover {
@@ -357,13 +359,22 @@
       font-size: 1.15rem;
       font-weight: 700;
       color: #ffffff;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .platform-detail {
       font-size: 0.8rem;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1.35;
     }
 
     .btn-download-small {
@@ -378,6 +389,7 @@
       font-weight: 600;
       text-decoration: none;
       transition: background 0.2s;
+      margin-top: auto;
     }
 
     .btn-download-small:hover {
