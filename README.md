@@ -5,7 +5,6 @@ A lightweight, secure, and interactive cross-platform wellness companion for Win
 ![Version](https://img.shields.io/badge/version-2.0.0-blue)
 ![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20Android%20%7C%20macOS%20%7C%20iOS-brightgreen)
 ![Portal](https://img.shields.io/badge/portal-https%3A%2F%2Fmycompanionhub.web.app-cyan)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
