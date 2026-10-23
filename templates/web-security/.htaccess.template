@@ -1,0 +1,46 @@
+# ==============================================================================
+# APACHE .htaccess SECURITY & ABUSE PREVENTION SNIPPET
+# ==============================================================================
+
+<IfModule mod_headers.c>
+  # 1. HSTS (Enforce HTTPS for 1 year + subdomains + preload)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # 2. Prevent MIME Sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # 3. Anti-Clickjacking (No framing)
+  Header always set X-Frame-Options "DENY"
+
+  # 4. XSS Protection
+  Header always set X-XSS-Protection "1; mode=block"
+
+  # 5. Referrer Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # 6. Hardware Permissions Lockdown
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), display-capture=()"
+
+  # 7. Content Security Policy
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://api.qrserver.com https://www.google-analytics.com https://*.google-analytics.com https://*.googletagmanager.com; font-src 'self'; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://*.googletagmanager.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+</IfModule>
+
+# 8. Web Manifest MIME Type
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+</IfModule>
+
+# 9. Downloads Folder Anti-Indexing & Direct Attachment
+<IfModule mod_headers.c>
+  <FilesMatch "\.(zip|exe|apk|dmg|tar\.gz)$">
+    Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet"
+    Header set Content-Disposition "attachment"
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+</IfModule>
+
+# 10. Block Hidden Files & Dotfiles (.git, .env)
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
