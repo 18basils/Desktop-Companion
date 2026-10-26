@@ -6,6 +6,9 @@ A lightweight, secure, and interactive cross-platform wellness companion for Win
 ![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20Android%20%7C%20macOS%20%7C%20iOS-brightgreen)
 ![Mascots](https://img.shields.io/badge/mascots-10%20Native%20%2B%208%20Community%20GIFs-orange)
 ![Portal](https://img.shields.io/badge/portal-https%3A%2F%2Fmycompanionhub.web.app-cyan)
+[![Security Policy](https://img.shields.io/badge/security-SECURITY.md-blue)](SECURITY.md)
+[![Contributing Guidelines](https://img.shields.io/badge/contributing-CONTRIBUTING.md-green)](CONTRIBUTING.md)
+[![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-lightgrey)](LICENSE.md)
 
 ---
 
@@ -189,3 +192,12 @@ Simply share:
 * **Apple**: `Apple Companion (iOS & macOS).zip` or download the pre-compiled `.dmg`/`.ipa` from the GitHub Actions Artifacts tab.
 * **Extension Pack**: `Companion-Avatar-Pack.zip` for existing users wanting the 8 community mascots.
 * **Web Portal**: Share [https://mycompanionhub.web.app](https://mycompanionhub.web.app).
+
+---
+
+## 📜 Community & Legal
+
+* **[Security Policy (SECURITY.md)](SECURITY.md)**: Vulnerability disclosure policies, response SLAs, and local IPC/memory defense architecture.
+* **[Contributing Guidelines (CONTRIBUTING.md)](CONTRIBUTING.md)**: Setup guides for Windows (PyQt6), Android (Compose), and Apple (SwiftUI), plus avatar contribution rules.
+* **[License Terms (LICENSE.md)](LICENSE.md)**: Copyright © 2026 Basil Shaji. All rights reserved.
+
