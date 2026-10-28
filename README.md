@@ -2,10 +2,10 @@
 
 A lightweight, secure, and interactive cross-platform wellness companion for Windows, Android, macOS, and iOS that keeps you hydrated, reminds you of posture and eye breaks, and brings life to your workspace.
 
-![Version](https://img.shields.io/badge/version-2.0.0-blue)
+[![Release v2.0.0](https://img.shields.io/badge/release-v2.0.0-blue?logo=github)](https://github.com/18basils/Desktop-Companion/releases/tag/v2.0.0)
 ![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20Android%20%7C%20macOS%20%7C%20iOS-brightgreen)
 ![Mascots](https://img.shields.io/badge/mascots-10%20Native%20%2B%208%20Community%20GIFs-orange)
-![Portal](https://img.shields.io/badge/portal-https%3A%2F%2Fmycompanionhub.web.app-cyan)
+[![Portal](https://img.shields.io/badge/portal-https%3A%2F%2Fmycompanionhub.web.app-cyan)](https://mycompanionhub.web.app)
 [![Security Policy](https://img.shields.io/badge/security-SECURITY.md-blue)](SECURITY.md)
 [![Contributing Guidelines](https://img.shields.io/badge/contributing-CONTRIBUTING.md-green)](CONTRIBUTING.md)
 [![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-lightgrey)](LICENSE.md)
@@ -55,7 +55,7 @@ Fresh installations automatically bundle 8 animated pixel companions into `asset
 * 🧪 **Magic Potion** (`magic_potion.gif`)
 
 ### 3. Standalone Avatar Pack for Existing Users (Option 3)
-Existing users can download [`Companion-Avatar-Pack.zip`](https://mycompanionhub.web.app/downloads/Companion-Avatar-Pack.zip) (12.7 KB) from the portal. Running `Install-Avatars.bat` automatically injects all 8 animated mascots into `%LocalAppData%\Programs\Desktop Companion\assets\custom_avatars\` without touching `config.json`. **Existing schedules, cup counts, and user names remain 100% intact.**
+Existing users can download [`Companion-Avatar-Pack.zip`](https://github.com/18basils/Desktop-Companion/releases/download/v2.0.0/Companion-Avatar-Pack.zip) (12.7 KB) directly from GitHub Releases or from the [Web Portal](https://mycompanionhub.web.app/downloads/Companion-Avatar-Pack.zip). Running `Install-Avatars.bat` automatically injects all 8 animated mascots into `%LocalAppData%\Programs\Desktop Companion\assets\custom_avatars\` without touching `config.json`. **Existing schedules, cup counts, and user names remain 100% intact.**
 
 ### 4. Custom Avatar Importer
 Drop any animated `.gif` or `.png` into `assets/custom_avatars/` or use the in-app file browser in Settings. The companion automatically loads and walks with your custom avatar!
@@ -184,14 +184,20 @@ Companion Hub enforces defense-in-depth across the desktop app, mobile targets, 
 
 ---
 
-## 📦 Colleague Distribution Package
+## 📦 Official Downloads & Distribution Package
 
-Simply share:
-* **Windows**: `Desktop Companion Setup.exe` (or `Desktop-Companion-Windows.zip`) — Zero dependencies, non-admin install to `%LocalAppData%\Programs\Desktop Companion`.
-* **Android**: `Phone Companion.apk` (or `Phone-Companion-Android.zip`).
-* **Apple**: `Apple Companion (iOS & macOS).zip` or download the pre-compiled `.dmg`/`.ipa` from the GitHub Actions Artifacts tab.
-* **Extension Pack**: `Companion-Avatar-Pack.zip` for existing users wanting the 8 community mascots.
-* **Web Portal**: Share [https://mycompanionhub.web.app](https://mycompanionhub.web.app).
+You can download pre-compiled packages directly from the official [v2.0.0 GitHub Release](https://github.com/18basils/Desktop-Companion/releases/tag/v2.0.0) (unlimited, fast global CDN) or through the [Web Portal](https://mycompanionhub.web.app):
+
+| Platform / Target | Package Type | Direct CDN Download Link | Size |
+| :--- | :--- | :--- | :--- |
+| **Windows 10 / 11** | Setup Wizard (`.exe`) | [📥 Desktop.Companion.Setup.exe](https://github.com/18basils/Desktop-Companion/releases/download/v2.0.0/Desktop.Companion.Setup.exe) | ~72 MB |
+| **Windows 10 / 11** | Portable Bundle (`.zip`) | [📥 Desktop-Companion-Windows.zip](https://github.com/18basils/Desktop-Companion/releases/download/v2.0.0/Desktop-Companion-Windows.zip) | ~71 MB |
+| **Android Phone** | Direct APK (`.apk`) | [📥 Phone.Companion.apk](https://github.com/18basils/Desktop-Companion/releases/download/v2.0.0/Phone.Companion.apk) | ~8.1 MB |
+| **Android Phone** | Package (`.zip`) | [📥 Phone-Companion-Android.zip](https://github.com/18basils/Desktop-Companion/releases/download/v2.0.0/Phone-Companion-Android.zip) | ~7.6 MB |
+| **Apple (macOS & iOS)** | SwiftUI & Overlay (`.zip`) | [📥 Apple-Companion.zip](https://github.com/18basils/Desktop-Companion/releases/download/v2.0.0/Apple-Companion.zip) | ~29 KB |
+| **Community Avatars** | Extension Pack (`.zip`) | [🎁 Companion-Avatar-Pack.zip](https://github.com/18basils/Desktop-Companion/releases/download/v2.0.0/Companion-Avatar-Pack.zip) | ~12.7 KB |
+
+* **Web Portal with QR Codes**: [https://mycompanionhub.web.app](https://mycompanionhub.web.app) (Point your phone camera at your computer screen for instant mobile download).
 
 ---
 
