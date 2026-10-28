@@ -1,6 +1,7 @@
 <!-- ============================================================================== -->
 <!-- HTML <head> SECURITY, SEO & OPENGRAPH META TEMPLATE                             -->
-<!-- Replace placeholders: {{SITE_NAME}}, {{TITLE}}, {{DESCRIPTION}}, {{URL}}, etc.   -->
+<!-- See opengraph-banner-requirements.template.md for image dimensions & safe zone  -->
+<!-- Use generate_og_banner.template.py to generate your 1200x630 banner (<300 KB)   -->
 <!-- ============================================================================== -->
 
 <meta charset="UTF-8">
@@ -23,10 +24,12 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Your Brand">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 
 <!-- Open Graph / Facebook / LinkedIn / WhatsApp / Slack -->
+<!-- Note: og:image MUST be an absolute HTTPS URL and ideally under 300 KB for WhatsApp -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://example.com/">
 <meta property="og:site_name" content="Your Brand">
@@ -43,6 +46,8 @@
 <!-- Twitter / X Large Summary Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://example.com/">
+<meta name="twitter:site" content="@your_brand_handle">
+<meta name="twitter:creator" content="@your_creator_handle">
 <meta name="twitter:title" content="Your Website Title - Catchy Slogan">
 <meta name="twitter:description" content="A clear, concise description of your service for social link cards.">
 <meta name="twitter:image" content="https://example.com/assets/og-image.png">
