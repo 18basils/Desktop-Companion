@@ -2,11 +2,19 @@
 
 A native, multiplatform Apple application built in **SwiftUI and Swift 5.9 / 6** bringing your interactive desktop & mobile pet to **iPhone, iPad, MacBook, and iMac**.
 
+[![Release v2.0.0](https://img.shields.io/badge/release-v2.0.0-blue?logo=github)](https://github.com/18basils/Desktop-Companion/releases/tag/v2.0.0)
+[![Portal](https://img.shields.io/badge/portal-https%3A%2F%2Fmycompanionhub.web.app-cyan)](https://mycompanionhub.web.app)
+![Platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20iOS%20%7C%20iPadOS-brightgreen)
+[![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-lightgrey)](../LICENSE.md)
+
+Live Production Portal: **[https://mycompanionhub.web.app](https://mycompanionhub.web.app)** (scan the on-screen Apple QR code to download directly to your iOS device).
+
 ---
 
 ## 🌟 Key Highlights & Modern UI
 
 - **Universal Multiplatform Architecture**: Single shared SwiftUI core running seamlessly across iOS, iPadOS, and macOS.
+- **10 Native Procedural Mascots (`PetSkinType`)**: Includes Pixel Guy, Cute Kitty, Robo Buddy, Water Slime, Forest Frog, Spooky Ghost, Playful Puppy, Rubber Duck, Mini Dino, and Honey Bear with custom color schemes and taglines.
 - **Modern Dark Glassmorphic Design**:
   - Deep space midnight theme (`#080C15`) with Apple `.ultraThinMaterial` glass cards and glowing neon cyan accents.
   - Luminous avatar sanctuary with animated breathing motion, floating particle sparkles, and emotion status pills.

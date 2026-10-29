@@ -95,12 +95,13 @@ We welcome community-created pixel pets and animated avatars!
 3. Build and run with `Cmd + R`.
 
 ### Web Portal (Firebase Hosting)
-1. The web portal lives in the `public/` folder.
-2. Test locally using any static web server:
+1. The production web portal is live at **[https://mycompanionhub.web.app](https://mycompanionhub.web.app)**.
+2. Web source files live in the `public/` directory (HTML5, CSS, responsive 3D SVG icons, and PWA manifest).
+3. Test locally using any static web server:
    ```powershell
    python -m http.server 8000 --directory public
    ```
-3. Deploy changes using the Firebase CLI:
+4. Deploy updates using the Firebase CLI:
    ```powershell
    firebase deploy --only hosting
    ```

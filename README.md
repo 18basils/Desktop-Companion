@@ -31,17 +31,17 @@ Live Production Portal: **[https://mycompanionhub.web.app](https://mycompanionhu
 Desktop Companion includes **18 ready-to-use companions** out of the box, with full support for custom animated imports:
 
 ### 1. 10 Built-In Procedural Pixel Mascots
-Procedurally drawn pixel art with zero image asset load overhead and crisp scaling across Retina and high-DPI displays:
-1. 🧢 **Pixel Guy**: Focused desk buddy and hydration companion.
-2. 🐱 **Cute Kitty**: Gentle ginger tabby with cozy purring animations.
-3. 🤖 **Robo Buddy**: Cyber wellness AI with animated antenna and LED screen.
-4. 💧 **Water Slime**: Bouncing pure hydration mascot with droplet ripples.
-5. 🐸 **Forest Frog**: Zen stretch master encouraging posture and neck rolls.
-6. 👻 **Spooky Ghost**: Translucent lilac phantom keeping you alert at your screen.
-7. 🐶 **Playful Puppy**: Golden retriever pup with floppy ears and a wagging tail.
-8. 🦆 **Rubber Duck**: Classic yellow duck with an orange bill for coding & debugging.
-9. 🦖 **Mini Dino**: Forest-green chibi dinosaur with dorsal spine plates.
-10. 🐻 **Honey Bear**: Cozy caramel bear with rounded ears and a warm tummy.
+Procedurally drawn pixel art with zero image asset load overhead and crisp scaling across Retina and high-DPI displays. Tap or click any mascot in-app or on the [Web Portal](https://mycompanionhub.web.app) to trigger live petting hearts (`❤️`) and unique personality quotes:
+1. 🧢 **Pixel Guy** (Focus Desk Buddy) — *"Stay focused and drink high quality H2O!"*
+2. 🐱 **Cute Kitty** (Gentle Nap & Sip Pet) — *"Purr... don't forget your water glass!"*
+3. 🤖 **Robo Buddy** (Cyber Wellness AI) — *"System check 100%... Hydration required!"*
+4. 💧 **Water Slime** (Pure Hydration Mascot) — *"Splish splash! Feed the machine!"*
+5. 🐸 **Forest Frog** (Zen Stretch Master) — *"Ribbit! 20-20-20 eye rest & neck roll!"*
+6. 👻 **Spooky Ghost** (Posture Reminder) — *"Booo! Don't slouch at your screen!"*
+7. 🐶 **Playful Puppy** (Loyal Hydration Buddy) — *"Woof! Time for a cool fresh water break!"*
+8. 🦆 **Rubber Duck** (Debug & Waddle Pal) — *"Quack! Let's debug this problem together!"*
+9. 🦖 **Mini Dino** (Prehistoric Focus Coach) — *"Rawr! Stand up, stretch tall, and hydrate!"*
+10. 🐻 **Honey Bear** (Warm & Cozy Rest Friend) — *"Yawn... restful breaks make great work!"*
 
 ### 2. 8 Pre-Bundled Community Animated GIFs
 Fresh installations automatically bundle 8 animated pixel companions into `assets/custom_avatars/`:
@@ -59,6 +59,21 @@ Existing users can download [`Companion-Avatar-Pack.zip`](https://github.com/18b
 
 ### 4. Custom Avatar Importer
 Drop any animated `.gif` or `.png` into `assets/custom_avatars/` or use the in-app file browser in Settings. The companion automatically loads and walks with your custom avatar!
+
+---
+
+## 🚀 Quick Start & Customization Guide
+
+Tips to get the most out of your companion immediately after installation:
+
+| Guide Card | Description | How to Use |
+| :--- | :--- | :--- |
+| 🎨 **Custom Avatars** | Import your own animated pixel pets or custom sprites. | Right-click the system tray icon > **Settings...** > **Avatars** > tap **"Import Custom Avatar"**, or drop any animated `.gif` / `.png` into `assets/custom_avatars/`. |
+| 👑 **Accessory Evolution** | Earn visual trophies by hitting hydration milestones throughout the day. | Reaching **4 cups** unlocks **pixel sunglasses 🕶️** on your character. Hitting your **daily goal** unlocks a **golden celebration crown 👑** with confetti! |
+| ⏸️ **Meeting Mode / Pause** | Silence popups during Zoom/Teams calls, screen sharing, or presentations. | Right-click the `💧` tray icon (or Mac menu bar) > **Meeting Mode / Pause** to snooze reminders for **30 minutes, 1 hour, or 2 hours**. Automatically resumes. |
+| 🌙 **Working & Quiet Hours** | Keep reminders aligned with your productive routine and sleep schedule. | Default office schedule runs **Mon–Fri, 9:00 AM – 6:30 PM**. Automatic **Quiet Hours (10:00 PM – 8:00 AM)** strictly silences all popups and droplet sounds. |
+| ❤️ **Interactive Petting** | Show love and boost your companion's mood anytime. | Click or tap on the walking character anytime to pat it! Floating hearts (`❤️`) burst upward and your companion lights up with gratitude. |
+| 🗑️ **Clean Uninstallation** | Zero residual bloat, zero background services, zero orphaned registry keys. | Fully registered in **Windows Settings > Apps > Installed apps**. You can uninstall it cleanly anytime directly from Windows Settings or your Start Menu. |
 
 ---
 
@@ -149,8 +164,14 @@ open "Apple Companion.xcodeproj"
 
 ## 🔥 4. Firebase Web Portal & Hosting
 
-* Hosted on Firebase Hosting.
-* Features smart device detection, on-screen dual QR codes, OpenGraph/Twitter cards for social sharing, PWA manifest, and Google Analytics 4 integration (`G-DDFQ122CDZ`).
+Live Production Portal: **[https://mycompanionhub.web.app](https://mycompanionhub.web.app)**
+
+* **Progressive Web App (PWA)**: Built with an installable `manifest.json` allowing visitors to install Companion Hub as a standalone desktop or mobile web app directly from Chrome, Edge, or Safari with offline caching and deep space navy theme styling (`#080C15`).
+* **Smart Device Auto-Detection**: Automatically identifies visitor operating systems (Windows, Android, macOS, iOS) using browser user-agent parsing and highlights the matching platform download card.
+* **Dual QR Code Hub**: Allows desktop visitors to toggle between Android (.apk) and Apple (.zip) QR codes to download directly to their phones using their camera.
+* **Interactive Petting Preview**: Click or tap any of the 10 mascots in the browser showcase to preview heart burst particle effects and character voice lines.
+* **Global CDN & Bandwidth Shielding**: All download buttons point to GitHub Releases CDN assets, keeping monthly Firebase outbound bandwidth virtually untouched.
+* **Analytics & Social Graph**: Integrated Google Analytics 4 (`G-DDFQ122CDZ`), OpenGraph 1200x630 cards, and Twitter summary cards for rich link unfurling on WhatsApp, Slack, LinkedIn, and Discord.
 
 ### Deploying to Firebase on a New PC:
 ```powershell
