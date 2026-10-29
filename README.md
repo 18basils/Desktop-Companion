@@ -3,6 +3,7 @@
 A lightweight, secure, and interactive cross-platform wellness companion for Windows, Android, macOS, and iOS that keeps you hydrated, reminds you of posture and eye breaks, and brings life to your workspace.
 
 [![Release v2.0.0](https://img.shields.io/badge/release-v2.0.0-blue?logo=github)](https://github.com/18basils/Desktop-Companion/releases/tag/v2.0.0)
+[![CodeQL](https://github.com/18basils/Desktop-Companion/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/18basils/Desktop-Companion/actions/workflows/github-code-scanning/codeql)
 ![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20Android%20%7C%20macOS%20%7C%20iOS-brightgreen)
 ![Mascots](https://img.shields.io/badge/mascots-10%20Native%20%2B%208%20Community%20GIFs-orange)
 [![Portal](https://img.shields.io/badge/portal-https%3A%2F%2Fmycompanionhub.web.app-cyan)](https://mycompanionhub.web.app)
@@ -192,6 +193,7 @@ Companion Hub enforces defense-in-depth across the desktop app, mobile targets, 
 * **Safe Avatar Importation**: Strict file extension whitelisting (`.gif`, `.png`), 15 MB file size limit, and header validation via `QImageReader`.
 * **Hardened Local IPC**: Local communication channel (`companion_ipc`) is restricted to whitelisted commands (`SUMMON`), rate-limited to 1.5s, with bounded buffers to prevent buffer overflows or local DoS.
 * **Memory & GDI Leak Prevention**: All drawing routines explicitly terminate painters to prevent Windows GDI handle exhaustion over long multi-day runtimes.
+* **Continuous CodeQL SAST Analysis**: Automated GitHub CodeQL semantic scanning runs on every push and pull request to detect and prevent security flaws and supply chain vulnerabilities.
 
 ### Web Infrastructure & Crawler Defense
 * **HTTP Security Headers**: HSTS (`max-age=31536000; preload`), `X-Frame-Options: DENY` (anti-clickjacking), `X-Content-Type-Options: nosniff`, and strict `Permissions-Policy`.

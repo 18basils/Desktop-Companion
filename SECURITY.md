@@ -1,5 +1,7 @@
 # Security Policy
 
+[![CodeQL Analysis](https://github.com/18basils/Desktop-Companion/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/18basils/Desktop-Companion/actions/workflows/github-code-scanning/codeql)
+
 ## Supported Versions
 
 We actively maintain and provide security updates for the current major release of **Desktop Companion & Companion Hub**:

@@ -3,6 +3,8 @@
 A native, multiplatform Apple application built in **SwiftUI and Swift 5.9 / 6** bringing your interactive desktop & mobile pet to **iPhone, iPad, MacBook, and iMac**.
 
 [![Release v2.0.0](https://img.shields.io/badge/release-v2.0.0-blue?logo=github)](https://github.com/18basils/Desktop-Companion/releases/tag/v2.0.0)
+[![CodeQL](https://github.com/18basils/Desktop-Companion/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/18basils/Desktop-Companion/actions/workflows/github-code-scanning/codeql)
+[![Build Apple](https://github.com/18basils/Desktop-Companion/actions/workflows/build-apple.yml/badge.svg)](https://github.com/18basils/Desktop-Companion/actions/workflows/build-apple.yml)
 [![Portal](https://img.shields.io/badge/portal-https%3A%2F%2Fmycompanionhub.web.app-cyan)](https://mycompanionhub.web.app)
 ![Platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20iOS%20%7C%20iPadOS-brightgreen)
 [![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-lightgrey)](../LICENSE.md)

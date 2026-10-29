@@ -3,6 +3,7 @@
 An interactive, battery-friendly mobile wellness pet and hydration tracker built in **Kotlin** with modern **Jetpack Compose** and **Material Design 3**.
 
 [![Release v2.0.0](https://img.shields.io/badge/release-v2.0.0-blue?logo=github)](https://github.com/18basils/Desktop-Companion/releases/tag/v2.0.0)
+[![CodeQL](https://github.com/18basils/Desktop-Companion/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/18basils/Desktop-Companion/actions/workflows/github-code-scanning/codeql)
 [![Portal](https://img.shields.io/badge/portal-https%3A%2F%2Fmycompanionhub.web.app-cyan)](https://mycompanionhub.web.app)
 ![Platforms](https://img.shields.io/badge/platform-Android%207.0%2B%20(API%2024%2B)-brightgreen?logo=android)
 [![License](https://img.shields.io/badge/license-All%20Rights%20Reserved-lightgrey)](../LICENSE.md)
