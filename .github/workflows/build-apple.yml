@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout Source Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Select Xcode Toolchain
         run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
