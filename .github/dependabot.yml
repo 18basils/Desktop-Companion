@@ -1,0 +1,34 @@
+# ==============================================================================
+# Dependabot Configuration for Desktop Companion
+# ==============================================================================
+version: 2
+updates:
+  # 1. Python dependencies (PyQt6, Pillow, requests, etc.)
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "python"
+
+  # 2. GitHub Actions CI/CD workflows
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "github-actions"
+
+  # 3. Android Phone Companion (Gradle)
+  - package-ecosystem: "gradle"
+    directory: "/phone-companion"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "android"
