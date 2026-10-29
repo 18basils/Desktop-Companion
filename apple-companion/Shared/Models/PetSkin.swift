@@ -72,6 +72,10 @@ public enum PetSkinType: String, CaseIterable, Identifiable, Codable {
         case .pixelSlime: return "Pure Hydration Mascot"
         case .pixelFrog: return "Zen Stretches & Deep Sips"
         case .pixelGhost: return "Hauntingly Good Posture"
+        case .pixelPuppy: return "Playful Energy & Loyal Focus"
+        case .pixelDuck: return "Calm Waters & Steady Flow"
+        case .pixelDino: return "Prehistoric Strength & Habits"
+        case .pixelBear: return "Cozy Vibes & Sweet Breaks"
         }
     }
 }
