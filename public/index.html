@@ -598,7 +598,7 @@
 
       <!-- Primary Auto-Detected Download Button -->
       <div class="hero-btn-container">
-        <a id="primaryDownloadBtn" href="downloads/Desktop-Companion-Windows.zip" class="btn-download-hero" download>
+        <a id="primaryDownloadBtn" href="https://github.com/18basils/Desktop-Companion/releases/download/v2.0.0/Desktop-Companion-Windows.zip" class="btn-download-hero" download>
           <span>📥 Download for Windows (.zip)</span>
         </a>
         <div id="fileMetaNote" class="file-meta-note">Version 2.0 • Standalone Setup inside .zip • ~71 MB</div>
@@ -655,7 +655,7 @@
         </div>
         <div class="platform-name">Windows 10 / 11</div>
         <div class="platform-detail">Setup Wizard inside .zip • x64 • ~71 MB</div>
-        <a href="downloads/Desktop-Companion-Windows.zip" class="btn-download-small" download>Download .zip</a>
+        <a href="https://github.com/18basils/Desktop-Companion/releases/download/v2.0.0/Desktop-Companion-Windows.zip" class="btn-download-small" download>Download .zip</a>
       </div>
 
       <!-- Android -->
@@ -701,7 +701,7 @@
         </div>
         <div class="platform-name">Android Phone</div>
         <div class="platform-detail">APK package inside .zip • ~7.6 MB</div>
-        <a href="downloads/Phone-Companion-Android.zip" class="btn-download-small" download>Download .zip</a>
+        <a href="https://github.com/18basils/Desktop-Companion/releases/download/v2.0.0/Phone-Companion-Android.zip" class="btn-download-small" download>Download .zip</a>
       </div>
 
       <!-- macOS -->
@@ -748,7 +748,7 @@
         </div>
         <div class="platform-name">macOS (MacBook / iMac)</div>
         <div class="platform-detail">Menu Bar App & Pet Overlay • Multiplatform</div>
-        <a href="downloads/Apple-Companion.zip" class="btn-download-small" download>Download for Mac</a>
+        <a href="https://github.com/18basils/Desktop-Companion/releases/download/v2.0.0/Apple-Companion.zip" class="btn-download-small" download>Download for Mac</a>
       </div>
 
       <!-- iOS -->
@@ -792,7 +792,7 @@
         </div>
         <div class="platform-name">iPhone & iPad (iOS)</div>
         <div class="platform-detail">Native SwiftUI Package (.zip)</div>
-        <a href="downloads/Apple-Companion.zip" class="btn-download-small" download>Download for iOS</a>
+        <a href="https://github.com/18basils/Desktop-Companion/releases/download/v2.0.0/Apple-Companion.zip" class="btn-download-small" download>Download for iOS</a>
       </div>
 
     </div>
@@ -839,7 +839,7 @@
             <div class="avatar-pack-meta">⚡ Includes 1-Click Auto-Installer (Install-Avatars.bat) • Preserves your name & settings</div>
           </div>
           <div class="avatar-pack-action">
-            <a href="downloads/Companion-Avatar-Pack.zip" class="btn-download-hero" download style="margin: 0; padding: 12px 22px; font-size: 0.95rem;">
+            <a href="https://github.com/18basils/Desktop-Companion/releases/download/v2.0.0/Companion-Avatar-Pack.zip" class="btn-download-hero" download style="margin: 0; padding: 12px 22px; font-size: 0.95rem;">
               <span>🎁 Download Avatar Pack (.zip)</span>
             </a>
             <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 6px;">Standalone ZIP • ~12 KB</div>
@@ -981,6 +981,8 @@
 
   <script>
     // 1. Smart Device Detection
+    const GITHUB_RELEASE_BASE = "https://github.com/18basils/Desktop-Companion/releases/download/v2.0.0";
+
     function detectDevice() {
       const ua = navigator.userAgent || navigator.vendor || window.opera;
       const badge = document.getElementById("deviceBadge");
@@ -992,26 +994,26 @@
 
       if (/android/i.test(ua)) {
         badge.innerHTML = "<span>📱 Detected: Android Device</span>";
-        btn.href = "downloads/Phone-Companion-Android.zip";
+        btn.href = `${GITHUB_RELEASE_BASE}/Phone-Companion-Android.zip`;
         btn.innerHTML = "<span>📥 Download for Android (.zip)</span>";
         note.innerText = "Phone Companion v2.0 • APK package inside .zip • ~7.6 MB";
         document.getElementById("card-android").classList.add("highlighted");
       } else if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
         badge.innerHTML = "<span>🍏 Detected: Apple iOS (iPhone/iPad)</span>";
-        btn.href = "downloads/Apple-Companion.zip";
+        btn.href = `${GITHUB_RELEASE_BASE}/Apple-Companion.zip`;
         btn.innerHTML = "<span>📥 Download for iOS (iPhone/iPad)</span>";
         note.innerText = "Apple Companion v2.0 • Native SwiftUI Package";
         document.getElementById("card-ios").classList.add("highlighted");
       } else if (/Macintosh|Mac OS X/i.test(ua)) {
         badge.innerHTML = "<span>🍏 Detected: Apple Mac (macOS)</span>";
-        btn.href = "downloads/Apple-Companion.zip";
+        btn.href = `${GITHUB_RELEASE_BASE}/Apple-Companion.zip`;
         btn.innerHTML = "<span>📥 Download for macOS</span>";
         note.innerText = "Apple Companion v2.0 • Menu Bar App & Pet Overlay";
         document.getElementById("card-macos").classList.add("highlighted");
       } else {
         // Default to Windows
         badge.innerHTML = "<span>💻 Detected: Windows PC</span>";
-        btn.href = "downloads/Desktop-Companion-Windows.zip";
+        btn.href = `${GITHUB_RELEASE_BASE}/Desktop-Companion-Windows.zip`;
         btn.innerHTML = "<span>📥 Download for Windows (.zip)</span>";
         note.innerText = "Desktop Companion v2.0 • Standalone Setup inside .zip • ~71 MB";
         document.getElementById("card-windows").classList.add("highlighted");
@@ -1025,19 +1027,16 @@
       const tabA = document.getElementById("tabAndroid");
       const tabB = document.getElementById("tabApple");
 
-      const currentOrigin = window.location.origin || "";
-      const currentPath = window.location.pathname.replace(/\/$/, "");
-
       if (type === 'android') {
         tabA.classList.add("active");
         tabB.classList.remove("active");
-        const apkUrl = `${currentOrigin}${currentPath}/downloads/Phone-Companion-Android.zip`;
+        const apkUrl = `${GITHUB_RELEASE_BASE}/Phone.Companion.apk`;
         img.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(apkUrl)}`;
-        caption.innerText = "Scan with your Android camera to download Phone-Companion-Android.zip directly!";
+        caption.innerText = "Scan with your Android camera to download Phone Companion.apk directly!";
       } else {
         tabB.classList.add("active");
         tabA.classList.remove("active");
-        const appleUrl = `${currentOrigin}${currentPath}/downloads/Apple-Companion.zip`;
+        const appleUrl = `${GITHUB_RELEASE_BASE}/Apple-Companion.zip`;
         img.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(appleUrl)}`;
         caption.innerText = "Scan with your iPhone / iPad camera to download the Apple Companion package!";
       }

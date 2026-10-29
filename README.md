@@ -76,7 +76,6 @@ Desktop-Companion/
 ├── public/                          # Firebase Hosting portal (HTML5, PWA manifest, robots.txt)
 │   ├── downloads/                   # Downloadable ZIPs (Windows, Android, Apple, Avatar Pack)
 │   └── assets/                      # Web icons, OpenGraph cards, audio
-├── templates/web-security/          # Reusable web security, robots.txt, and header templates
 ├── firebase.json, .firebaserc       # Firebase hosting, CSP & security configuration
 └── assets/                          # App audio, tray icons, and bundled custom avatars
 ```
@@ -178,9 +177,6 @@ Companion Hub enforces defense-in-depth across the desktop app, mobile targets, 
 * **Content Security Policy (CSP)**: Whitelists only trusted origins (`'self'`, Google Tag Manager, Google Analytics, QR Server).
 * **Crawler Policy (`robots.txt`)**: Allows verified search crawlers (Google, Bing, Apple) and social preview bots (WhatsApp, Twitter/X, LinkedIn, Slack) while strictly blocking aggressive SEO scrapers (Ahrefs, Semrush, Bytespider), AI harvesters (GPTBot, CCBot, ClaudeBot), and exploit scanners (sqlmap, Nmap, WPScan).
 * **Download Abuse Safeguards**: Route `/downloads/**` enforces `X-Robots-Tag: noindex, nofollow`, `Content-Disposition: attachment`, and 24-hour Edge CDN caching to eliminate server bandwidth exhaustion.
-
-> [!TIP]
-> **Reusing Web Security on Other Websites**: Complete drop-in templates for `robots.txt`, `firebase.json`, `_headers` (Cloudflare/Netlify), Nginx (`security-headers.nginx.conf`), and Apache (`.htaccess`) are located in [`templates/web-security/`](templates/web-security/).
 
 ---
 
