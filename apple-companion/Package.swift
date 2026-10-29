@@ -18,13 +18,19 @@ let package = Package(
         .executableTarget(
             name: "AppleCompanion",
             path: ".",
+            exclude: [
+                "Resources/Info.plist",
+                "Resources/Apple_Companion_iOS.entitlements",
+                "Resources/Apple_Companion_macOS.entitlements",
+                "Apple Companion.xcodeproj"
+            ],
             sources: [
                 "Shared",
                 "iOS",
                 "macOS"
             ],
             resources: [
-                .process("Resources")
+                .process("Resources/PrivacyInfo.xcprivacy")
             ]
         )
     ]

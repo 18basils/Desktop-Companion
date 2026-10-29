@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Resource Hints for PageSpeed & DNS Acceleration -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <link rel="preconnect" href="https://api.qrserver.com">
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-DDFQ122CDZ"></script>
   <script>
@@ -17,7 +23,7 @@
   
   <!-- Primary Meta Tags -->
   <meta name="title" content="Companion Hub - Interactive Desktop & Mobile Pet">
-  <meta name="description" content="Download your personalized desktop & mobile companion pet for Windows, Android, Mac, and iOS. Features hydration tracking, posture breaks, 6 animated pixel pets, and custom avatars.">
+  <meta name="description" content="Download your personalized desktop & mobile companion pet for Windows, Android, Mac, and iOS. Features hydration tracking, posture breaks, 10 procedural pixel mascots, 8 animated community pets, and custom avatars.">
   <meta name="keywords" content="desktop companion, desktop pet, hydration reminder, posture coach, screen buddy, pixel pet, windows, android apk, macos, ios">
   <meta name="author" content="BS_CZR_i11">
   <meta name="robots" content="index, follow">
@@ -853,13 +859,13 @@
       <h2 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 8px;">Scan to Install on Mobile</h2>
       <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Point your phone camera at your screen to download instantly on mobile</p>
 
-      <div class="qr-nav">
-        <button id="tabAndroid" class="qr-tab-btn active" onclick="switchQR('android')">Android (.apk)</button>
-        <button id="tabApple" class="qr-tab-btn" onclick="switchQR('apple')">iPhone & iPad (Apple)</button>
+      <div class="qr-nav" role="tablist" aria-label="Mobile Download Options">
+        <button id="tabAndroid" class="qr-tab-btn active" role="tab" aria-selected="true" aria-controls="qrDisplayPanel" tabindex="0" onclick="switchQR('android')">Android (.apk)</button>
+        <button id="tabApple" class="qr-tab-btn" role="tab" aria-selected="false" aria-controls="qrDisplayPanel" tabindex="-1" onclick="switchQR('apple')">iPhone & iPad (Apple)</button>
       </div>
 
-      <div class="qr-display-box">
-        <img id="qrImage" src="" alt="Mobile Download QR Code">
+      <div id="qrDisplayPanel" class="qr-display-box" role="tabpanel" aria-labelledby="tabAndroid">
+        <img id="qrImage" width="180" height="180" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https%3A%2F%2Fgithub.com%2F18basils%2FDesktop-Companion%2Freleases%2Fdownload%2Fv2.0.0%2FPhone.Companion.apk" alt="Mobile Download QR Code" decoding="async">
       </div>
 
       <div id="qrCaption" class="qr-hint">Scan with your Android camera to download Phone Companion.apk</div>
@@ -1020,22 +1026,33 @@
       }
     }
 
-    // 2. Dual QR Code Switcher
+    // 2. Dual QR Code Switcher (Accessible WAI-ARIA Tab Controller)
     function switchQR(type) {
       const img = document.getElementById("qrImage");
       const caption = document.getElementById("qrCaption");
       const tabA = document.getElementById("tabAndroid");
       const tabB = document.getElementById("tabApple");
+      const panel = document.getElementById("qrDisplayPanel");
 
       if (type === 'android') {
         tabA.classList.add("active");
+        tabA.setAttribute("aria-selected", "true");
+        tabA.setAttribute("tabindex", "0");
         tabB.classList.remove("active");
+        tabB.setAttribute("aria-selected", "false");
+        tabB.setAttribute("tabindex", "-1");
+        if (panel) panel.setAttribute("aria-labelledby", "tabAndroid");
         const apkUrl = `${GITHUB_RELEASE_BASE}/Phone.Companion.apk`;
         img.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(apkUrl)}`;
         caption.innerText = "Scan with your Android camera to download Phone Companion.apk directly!";
       } else {
         tabB.classList.add("active");
+        tabB.setAttribute("aria-selected", "true");
+        tabB.setAttribute("tabindex", "0");
         tabA.classList.remove("active");
+        tabA.setAttribute("aria-selected", "false");
+        tabA.setAttribute("tabindex", "-1");
+        if (panel) panel.setAttribute("aria-labelledby", "tabApple");
         const appleUrl = `${GITHUB_RELEASE_BASE}/Apple-Companion.zip`;
         img.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(appleUrl)}`;
         caption.innerText = "Scan with your iPhone / iPad camera to download the Apple Companion package!";
@@ -1054,10 +1071,31 @@
       setTimeout(() => heart.remove(), 1000);
     }
 
+    // Keyboard navigation for QR tabs (ArrowLeft, ArrowRight)
+    function setupQRKeyboardNav() {
+      const qrNav = document.querySelector(".qr-nav");
+      if (qrNav) {
+        qrNav.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+            e.preventDefault();
+            const isAndroid = document.getElementById("tabAndroid").classList.contains("active");
+            if (isAndroid) {
+              switchQR('apple');
+              document.getElementById("tabApple").focus();
+            } else {
+              switchQR('android');
+              document.getElementById("tabAndroid").focus();
+            }
+          }
+        });
+      }
+    }
+
     // Initialize on page load
     window.addEventListener("DOMContentLoaded", () => {
       detectDevice();
       switchQR('android');
+      setupQRKeyboardNav();
     });
   </script>
 </body>
